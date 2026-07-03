@@ -527,6 +527,7 @@
 
     /* ====== 全局题目数据 ====== */
     let allQuestions = [];
+    let currentQuestions = [];
 
     /* ====== 加载题目数据 ====== */
     (function loadQuestions() {
@@ -551,11 +552,7 @@
       toPage.style.opacity = '0';
       toPage.style.transform = 'translateY(20px)';
       toPage.style.transition = 'opacity 0.35s ease-out, transform 0.35s ease-out';
-      toPage.style.display = 'flex';
-      toPage.style.flexDirection = 'column';
-      toPage.style.alignItems = 'center';
-      toPage.style.justifyContent = 'center';
-
+      toPage.classList.add('active');
       requestAnimationFrame(function () {
         requestAnimationFrame(function () {
           fromPage.style.opacity = '0';
@@ -569,7 +566,6 @@
       setTimeout(function () {
         fromPage.style.display = 'none';
         fromPage.classList.remove('active');
-        toPage.classList.add('active');
       }, 400);
     }
 
@@ -627,6 +623,8 @@
       } else {
         questions = shuffleArray(questions);
       }
+
+      currentQuestions = questions;
 
       console.log('[DS刷题] 开始答题，配置:', config);
       console.log('[DS刷题] 题目数量:', questions.length);
