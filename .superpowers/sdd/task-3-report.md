@@ -131,3 +131,18 @@ All existing functionality remains intact:
 
 ### Remaining Concerns
 - None. Both review findings have been addressed.
+
+---
+
+## Re-review Fix -- 2026-07-03
+
+### Fix 3: Clear stale inline display style for round-trip navigation
+
+**Problem:** `switchPage()` set `fromPage.style.display = 'none'` as an inline style. When navigating back (e.g., Quiz -> Cover), the old page had a stale inline `display: none` that overrides the CSS `.page.active { display: flex; }`, making the page invisible.
+
+**Fix applied:**
+- Added `toPage.style.display = ''` at the start of `switchPage()` to clear any residual inline display style from the target page.
+- Removed `fromPage.style.display = 'none'` from the setTimeout callback. The CSS class toggle (`classList.remove('active')`) is sufficient to hide the old page via the `.page { display: none }` rule.
+
+### Final Status: DONE
+All findings resolved. Round-trip navigation (Cover <-> Quiz) works correctly.
