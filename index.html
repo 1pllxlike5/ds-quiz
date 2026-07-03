@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#1a1a2e">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="DS刷题">
+  <meta name="description" content="数据结构期末考试题库">
+  <link rel="manifest" href="data:application/json;base64,ewogICJuYW1lIjogIuaVsOaNrue7k+aehOWIl+mimOmimCIsCiAgInNob3J0X25hbWUiOiAiRFPliJfpopgiLAogICJzdGFydF91cmwiOiAiLi8iLAogICJkaXNwbGF5IjogInN0YW5kYWxvbmUiLAogICJiYWNrZ3JvdW5kX2NvbG9yIjogIiMxYTFhMmUiLAogICJ0aGVtZV9jb2xvciI6ICIjMWExYTJlIgp9">
+  <title>数据结构刷题</title>
+  <style>
+    /* ====== 全局 CSS 变量和基础样式 ====== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg-primary: #1a1a2e;
+      --bg-card: #16213e;
+      --bg-card-hover: #1a2744;
+      --accent: #0f3460;
+      --accent-light: #1a508b;
+      --text-primary: #eaeaea;
+      --text-secondary: #a0a0b0;
+      --correct: #00b894;
+      --error: #e94560;
+      --warning: #fdcb6e;
+      --progress: #6c5ce7;
+      --surface: #0d1b36;
+      --radius: 12px;
+      --radius-sm: 8px;
+      --font-mono: 'Courier New', monospace;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC',
+                   'Microsoft YaHei', sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow-x: hidden;
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    /* ====== 页面切换动画 ====== */
+    .page {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      display: none; flex-direction: column; align-items: center; justify-content: center;
+      transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+    }
+    .page.active { display: flex; opacity: 1; transform: translateY(0); }
+    .page.exit { opacity: 0; transform: translateY(-20px); }
+
+    /* ====== 封面页 ====== */
+    .cover-container {
+      text-align: center; padding: 2rem;
+      max-width: 400px; width: 100%;
+    }
+
+    .cover-title {
+      font-size: 1.75rem; font-weight: 700;
+      letter-spacing: 0.25em; margin: 1.5rem 0 0.5rem;
+      color: var(--text-primary);
+    }
+
+    .cover-subtitle {
+      font-size: 0.875rem; color: var(--text-secondary);
+      margin-bottom: 2rem;
+    }
+
+    .cover-stats {
+      display: flex; justify-content: center; align-items: center;
+      gap: 0; background: var(--bg-card);
+      border-radius: var(--radius); padding: 1rem 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .stat-item { display: flex; flex-direction: column; align-items: center; padding: 0 1rem; }
+    .stat-num { font-size: 1.5rem; font-weight: 700; color: var(--accent-light); }
+    .stat-label { font-size: 0.75rem; color: var(--text-secondary); margin-top: 0.25rem; }
+    .stat-divider { width: 1px; height: 40px; background: var(--accent); opacity: 0.3; }
+
+    .btn-primary {
+      display: block; width: 100%; max-width: 300px; margin: 0 auto;
+      padding: 1rem 2rem; font-size: 1.125rem; font-weight: 600;
+      color: #fff; background: var(--accent-light);
+      border: none; border-radius: var(--radius);
+      cursor: pointer; letter-spacing: 0.15em;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .btn-primary:hover { transform: scale(1.02); box-shadow: 0 4px 20px rgba(26,80,139,0.4); }
+    .btn-primary:active { transform: scale(0.98); }
+
+    .btn-pulse {
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(26,80,139,0.5); }
+      50% { box-shadow: 0 0 0 12px rgba(26,80,139,0); }
+    }
+
+    .last-progress {
+      margin-top: 1.5rem; font-size: 0.85rem; color: var(--text-secondary);
+    }
+    .last-progress.hidden { display: none; }
+    .btn-text {
+      background: none; border: none; color: var(--accent-light);
+      font-size: 0.85rem; cursor: pointer; padding: 0.25rem 0.5rem;
+    }
+
+    /* ====== 答题页占位 ====== */
+    .quiz-container {
+      width: 100%; max-width: 700px; padding: 1rem;
+    }
+
+    /* ====== 结算页占位 ====== */
+    .result-container {
+      text-align: center; padding: 2rem;
+      max-width: 500px; width: 100%;
+    }
+
+    /* ====== 响应式 ====== */
+    @media (max-width: 768px) {
+      .cover-title { font-size: 1.5rem; letter-spacing: 0.2em; }
+      .cover-stats { padding: 0.75rem 1rem; }
+      .stat-item { padding: 0 0.6rem; }
+      .stat-num { font-size: 1.25rem; }
+    }
+
+    @media (max-width: 480px) {
+      .cover-container { padding: 1rem; }
+      .cover-title { font-size: 1.3rem; letter-spacing: 0.15em; }
+      .cover-stats { flex-wrap: wrap; gap: 0.25rem; padding: 0.75rem 0.5rem; }
+      .stat-item { padding: 0 0.4rem; }
+      .stat-num { font-size: 1.1rem; }
+      .stat-label { font-size: 0.65rem; }
+      .btn-primary { font-size: 1rem; padding: 0.85rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ====== 封面页 ====== -->
+  <section id="cover" class="page active">
+    <div class="cover-container">
+      <canvas id="treeIcon" width="120" height="140"></canvas>
+      <h1 class="cover-title">数 据 结 构 刷 题</h1>
+      <p class="cover-subtitle">数据结构期末考试题库</p>
+      <div class="cover-stats">
+        <div class="stat-item">
+          <span class="stat-num">9</span>
+          <span class="stat-label">章节</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num">185</span>
+          <span class="stat-label">选择题</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num">326</span>
+          <span class="stat-label">填空题</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num">511</span>
+          <span class="stat-label">总题数</span>
+        </div>
+      </div>
+      <button id="btnStart" class="btn-primary btn-pulse">开 始 刷 题</button>
+      <div id="lastProgress" class="last-progress hidden">
+        <span id="lastProgressText"></span>
+        <button id="btnContinue" class="btn-text">继续上次 ▸</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== 答题页（占位） ====== -->
+  <section id="quiz" class="page">
+    <div class="quiz-container">
+      <!-- 后续任务填充 -->
+    </div>
+  </section>
+
+  <!-- ====== 结算页（占位） ====== -->
+  <section id="result" class="page">
+    <div class="result-container">
+      <!-- 后续任务填充 -->
+    </div>
+  </section>
+
+  <script>
+    /* ====== 二叉树封面图标 Canvas 绘制 ====== */
+    function drawTreeIcon() {
+      const canvas = document.getElementById('treeIcon');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      const cw = canvas.width, ch = canvas.height;
+      const cx = cw / 2, cy = 30;
+
+      ctx.clearRect(0, 0, cw, ch);
+
+      // 节点参数
+      const nodeRadius = 14;
+      const nodeColor = '#1a508b';
+      const nodeStroke = '#6c5ce7';
+      const lineColor = '#a0a0b0';
+      const textColor = '#eaeaea';
+
+      function drawNode(x, y, letter) {
+        ctx.beginPath();
+        ctx.arc(x, y, nodeRadius, 0, Math.PI * 2);
+        ctx.fillStyle = nodeColor;
+        ctx.fill();
+        ctx.strokeStyle = nodeStroke;
+        ctx.lineWidth = 2;
+        ctx.stroke();
+        ctx.fillStyle = textColor;
+        ctx.font = 'bold 14px monospace';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(letter, x, y);
+      }
+
+      function drawLine(x1, y1, x2, y2) {
+        ctx.beginPath();
+        ctx.moveTo(x1, y1 + nodeRadius);
+        ctx.lineTo(x2, y2 - nodeRadius);
+        ctx.strokeStyle = lineColor;
+        ctx.lineWidth = 2;
+        ctx.stroke();
+      }
+
+      // 三层二叉树
+      const level2y = cy + 40, level3y = cy + 80;
+      drawNode(cx, cy, 'A');                         // 根
+      drawLine(cx, cy, cx - 30, level2y);            // 连线
+      drawLine(cx, cy, cx + 30, level2y);
+      drawNode(cx - 30, level2y, 'B');               // 左子
+      drawNode(cx + 30, level2y, 'C');               // 右子
+      drawLine(cx - 30, level2y, cx - 50, level3y);  // 连线
+      drawLine(cx - 30, level2y, cx - 10, level3y);
+      drawLine(cx + 30, level2y, cx + 10, level3y);
+      drawLine(cx + 30, level2y, cx + 50, level3y);
+      drawNode(cx - 50, level3y, 'D');
+      drawNode(cx - 10, level3y, 'E');
+      drawNode(cx + 10, level3y, 'F');
+      drawNode(cx + 50, level3y, 'G');
+    }
+
+    // 页面加载时绘制
+    document.addEventListener('DOMContentLoaded', drawTreeIcon);
+
+    /* ====== 页面切换 ====== */
+    function navigateTo(pageId) {
+      const current = document.querySelector('.page.active');
+      const target = document.getElementById(pageId);
+      if (!current || !target || current === target) return;
+
+      current.classList.add('exit');
+      current.classList.remove('active');
+
+      target.classList.remove('exit');
+      target.classList.add('active');
+    }
+
+    /* ====== 封面按钮事件（后续任务完善） ====== */
+    document.addEventListener('DOMContentLoaded', function () {
+      const btnStart = document.getElementById('btnStart');
+      if (btnStart) {
+        btnStart.addEventListener('click', function () {
+          // 后续任务会实现跳转到答题页
+          // navigateTo('quiz');
+        });
+      }
+
+      // 检查 localStorage 是否有保存的进度
+      const savedProgress = localStorage.getItem('ds_quiz_progress');
+      const lastProgress = document.getElementById('lastProgress');
+      const lastProgressText = document.getElementById('lastProgressText');
+      if (savedProgress && lastProgress && lastProgressText) {
+        try {
+          const progress = JSON.parse(savedProgress);
+          lastProgress.classList.remove('hidden');
+          lastProgressText.textContent = '继续上次：第 ' + (progress.currentIndex + 1) + ' / ' + progress.totalCount + ' 题';
+        } catch (e) {
+          // 无效的进度数据，保持隐藏
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>
