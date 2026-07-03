@@ -548,6 +548,8 @@
       var toPage = document.getElementById(toId);
       if (!fromPage || !toPage || fromPage === toPage) return;
 
+      // 清除目标页面残留的内联 display 样式，让 CSS class 控制布局
+      toPage.style.display = '';
       fromPage.style.opacity = '1';
       toPage.style.opacity = '0';
       toPage.style.transform = 'translateY(20px)';
@@ -564,7 +566,6 @@
       });
 
       setTimeout(function () {
-        fromPage.style.display = 'none';
         fromPage.classList.remove('active');
       }, 400);
     }
