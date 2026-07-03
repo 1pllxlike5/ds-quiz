@@ -120,7 +120,7 @@
       justify-content: flex-start;
     }
 
-    .quiz-toolbar {
+    .toolbar {
       position: fixed; top: 0; left: 0; right: 0;
       display: flex; align-items: center; gap: 0.5rem;
       padding: 0.5rem 1rem;
@@ -152,7 +152,7 @@
       flex-shrink: 0;
     }
 
-    .toolbar-selectors {
+    .toolbar-controls {
       display: flex; gap: 0.35rem; flex: 1;
       justify-content: center; align-items: center;
       flex-wrap: wrap;
@@ -190,11 +190,6 @@
       border-radius: 2px; overflow: hidden;
     }
 
-    .progress-bar-fill {
-      height: 100%; background: var(--progress);
-      border-radius: 2px; transition: width 0.3s ease;
-    }
-
     .progress-stats {
       display: flex; justify-content: space-between; align-items: center;
       margin-top: 0.35rem; font-size: 0.75rem; color: var(--text-secondary);
@@ -216,7 +211,7 @@
       .stat-num { font-size: 1.25rem; }
 
       .toolbar-title { display: none; }
-      .quiz-toolbar { padding: 0.4rem 0.6rem; gap: 0.35rem; }
+      .toolbar { padding: 0.4rem 0.6rem; gap: 0.35rem; }
       .btn-icon { width: 36px; height: 36px; font-size: 1.1rem; }
       .sel { font-size: 0.75rem; padding: 0.35rem 0.45rem; }
       .quiz-main { margin: 54px auto 54px; padding: 0.75rem; }
@@ -231,8 +226,8 @@
       .stat-label { font-size: 0.65rem; }
       .btn-primary { font-size: 1rem; padding: 0.85rem 1.5rem; }
 
-      .quiz-toolbar { padding: 0.35rem 0.5rem; min-height: 46px; }
-      .toolbar-selectors { gap: 0.25rem; }
+      .toolbar { padding: 0.35rem 0.5rem; min-height: 46px; }
+      .toolbar-controls { gap: 0.25rem; }
       .btn-icon { width: 32px; height: 32px; font-size: 1rem; }
       .sel { font-size: 0.7rem; padding: 0.3rem 0.35rem; min-width: 50px; }
       .quiz-main { margin: 50px auto 50px; padding: 0.5rem; gap: 0.75rem; }
@@ -279,12 +274,12 @@
 
   <!-- ====== 答题页 ====== -->
   <section id="quiz" class="page">
-    <header class="quiz-toolbar" id="quizToolbar">
-      <button class="btn-icon" id="btnBack" title="返回">&#x2190;</button>
-      <span class="toolbar-title">配置面板</span>
-      <div class="toolbar-selectors">
+    <header class="toolbar" id="quizToolbar">
+      <button id="btnBack" class="btn-icon" title="返回封面">&#x2190;</button>
+      <span class="toolbar-title">数据结构刷题</span>
+      <div class="toolbar-controls">
         <select id="selChapter" class="sel">
-          <option value="all">全部章节</option>
+          <option value="0">全部章节</option>
           <option value="1">第1章 绪论</option>
           <option value="2">第2章 线性表</option>
           <option value="3">第3章 栈和队列</option>
@@ -295,18 +290,16 @@
           <option value="8">第8章 查找</option>
           <option value="9">第9章 排序</option>
         </select>
-        <select id="selType" class="sel">
-          <option value="all">全部题型</option>
-          <option value="single">选择题</option>
-          <option value="fill">填空题</option>
+        <select id="selMode" class="sel">
+          <option value="learn">学习模式</option>
+          <option value="exam">考试模式</option>
         </select>
         <select id="selCount" class="sel">
-          <option value="all">全部题目</option>
-          <option value="10">10 题</option>
-          <option value="20">20 题</option>
-          <option value="30">30 题</option>
-          <option value="50">50 题</option>
-          <option value="100">100 题</option>
+          <option value="0">全部题目</option>
+          <option value="10">10题</option>
+          <option value="20">20题</option>
+          <option value="30">30题</option>
+          <option value="50">50题</option>
         </select>
       </div>
     </header>
@@ -314,9 +307,7 @@
       <!-- Task 4 填充题目内容 -->
     </main>
     <footer class="quiz-footer" id="quizFooter">
-      <div class="progress-bar">
-        <div class="progress-bar-fill" id="progressFill" style="width: 0%"></div>
-      </div>
+      <div class="progress-bar" id="progressBar"></div>
       <div class="progress-stats">
         <span id="progressText">0 / 0</span>
         <span class="correct-rate" id="correctRate">正确率 --</span>
@@ -556,10 +547,27 @@
       var toPage = document.getElementById(toId);
       if (!fromPage || !toPage || fromPage === toPage) return;
 
-      fromPage.classList.add('exit');
+      fromPage.style.opacity = '1';
+      toPage.style.opacity = '0';
+      toPage.style.transform = 'translateY(20px)';
+      toPage.style.transition = 'opacity 0.35s ease-out, transform 0.35s ease-out';
+      toPage.style.display = 'flex';
+      toPage.style.flexDirection = 'column';
+      toPage.style.alignItems = 'center';
+      toPage.style.justifyContent = 'center';
+
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          fromPage.style.opacity = '0';
+          fromPage.style.transition = 'opacity 0.35s ease-out';
+
+          toPage.style.opacity = '1';
+          toPage.style.transform = 'translateY(0)';
+        });
+      });
 
       setTimeout(function () {
-        fromPage.classList.remove('exit');
+        fromPage.style.display = 'none';
         fromPage.classList.remove('active');
         toPage.classList.add('active');
       }, 400);
@@ -567,14 +575,10 @@
 
     /* ====== 获取配置 ====== */
     function getConfig() {
-      try {
-        var saved = localStorage.getItem('ds_quiz_config');
-        if (saved) return JSON.parse(saved);
-      } catch (e) { /* ignore */ }
       return {
-        chapter: 'all',
-        type: 'all',
-        count: 'all'
+        chapter: parseInt(document.getElementById('selChapter').value),
+        mode: document.getElementById('selMode').value,
+        count: parseInt(document.getElementById('selCount').value),
       };
     }
 
@@ -599,15 +603,9 @@
     function filterQuestions(config) {
       var filtered = allQuestions.slice();
 
-      // 按章节过滤
-      if (config.chapter !== 'all') {
-        var chapterNum = parseInt(config.chapter, 10);
-        filtered = filtered.filter(function (q) { return q.chapter === chapterNum; });
-      }
-
-      // 按题型过滤
-      if (config.type !== 'all') {
-        filtered = filtered.filter(function (q) { return q.type === config.type; });
+      // 按章节过滤（0 表示全部）
+      if (config.chapter !== 0) {
+        filtered = filtered.filter(function (q) { return q.chapter === config.chapter; });
       }
 
       return filtered;
@@ -623,9 +621,9 @@
         return;
       }
 
-      // 按题目数量限制
-      if (config.count !== 'all') {
-        questions = shuffleArray(questions).slice(0, parseInt(config.count, 10));
+      // 按题目数量限制（0 表示全部）
+      if (config.count !== 0) {
+        questions = shuffleArray(questions).slice(0, config.count);
       } else {
         questions = shuffleArray(questions);
       }
@@ -644,21 +642,19 @@
 
     /* ====== 选择器变更处理 ====== */
     function onConfigChange() {
-      var config = {
-        chapter: document.getElementById('selChapter').value,
-        type: document.getElementById('selType').value,
-        count: document.getElementById('selCount').value
-      };
+      var config = getConfig();
       saveConfig(config);
 
       // 预览匹配题目数量
       var filtered = filterQuestions(config);
       var info = '共 ' + filtered.length + ' 题';
-      if (config.count !== 'all') {
-        var count = Math.min(parseInt(config.count, 10), filtered.length);
+      if (config.count !== 0) {
+        var count = Math.min(config.count, filtered.length);
         info = '随机 ' + count + ' / ' + filtered.length + ' 题';
       }
       console.log('[DS刷题] 配置变更:', config, info);
+
+      startQuiz();
     }
 
     /* ====== 页面初始化（合并所有 DOMContentLoaded 逻辑） ====== */
@@ -690,24 +686,29 @@
       var btnBack = document.getElementById('btnBack');
       if (btnBack) {
         btnBack.addEventListener('click', function () {
-          if (confirm('确定要返回首页吗？当前进度将会丢失。')) {
+          if (confirm('确定要返回封面吗？当前进度将丢失。')) {
             switchPage('quiz', 'cover');
           }
         });
       }
 
       // ====== 恢复上次配置 ======
-      var savedConfig = getConfig();
+      var savedConfig = localStorage.getItem('ds_quiz_config');
       var selChapter = document.getElementById('selChapter');
-      var selType = document.getElementById('selType');
+      var selMode = document.getElementById('selMode');
       var selCount = document.getElementById('selCount');
-      if (selChapter) selChapter.value = savedConfig.chapter;
-      if (selType) selType.value = savedConfig.type;
-      if (selCount) selCount.value = savedConfig.count;
+      if (savedConfig) {
+        try {
+          var saved = JSON.parse(savedConfig);
+          if (selChapter) selChapter.value = saved.chapter;
+          if (selMode) selMode.value = saved.mode;
+          if (selCount) selCount.value = saved.count;
+        } catch (e) { /* ignore */ }
+      }
 
       // ====== 选择器变更事件 ======
       if (selChapter) selChapter.addEventListener('change', onConfigChange);
-      if (selType) selType.addEventListener('change', onConfigChange);
+      if (selMode) selMode.addEventListener('change', onConfigChange);
       if (selCount) selCount.addEventListener('change', onConfigChange);
 
       // ====== 检查 localStorage 是否有保存的进度 ======
