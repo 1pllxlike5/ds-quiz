@@ -461,6 +461,126 @@
       max-width: 500px; width: 100%;
     }
 
+    /* ====== Task 6: 卡片动画 ====== */
+    .question-card.card-correct {
+      animation: correctGlow 0.5s ease-in-out;
+    }
+    @keyframes correctGlow {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(0,184,148,0); }
+      50% { box-shadow: 0 0 20px 4px rgba(0,184,148,0.3); }
+    }
+
+    .question-card.card-wrong {
+      animation: shakeX 0.4s ease;
+    }
+    @keyframes shakeX {
+      0%, 100% { transform: translateX(0); }
+      20% { transform: translateX(-6px); }
+      40% { transform: translateX(6px); }
+      60% { transform: translateX(-6px); }
+      80% { transform: translateX(6px); }
+    }
+
+    /* ====== Task 6: 选项禁用和高亮 ====== */
+    .option-btn.disabled {
+      pointer-events: none;
+      opacity: 0.7;
+    }
+
+    .option-btn.wrong {
+      border-color: var(--error) !important;
+      background: rgba(233,69,96,0.12) !important;
+    }
+    .option-btn.wrong .option-letter {
+      background: var(--error);
+    }
+
+    /* ====== Task 6: 反馈横幅 ====== */
+    .feedback-banner {
+      display: flex; align-items: center; gap: 0.5rem;
+      padding: 0.75rem 1rem; border-radius: var(--radius-sm);
+      margin-bottom: 1rem; font-size: 0.95rem;
+    }
+    .feedback-banner.feedback-correct { background: rgba(0,184,148,0.1); border: 1px solid rgba(0,184,148,0.3); color: var(--correct); }
+    .feedback-banner.feedback-wrong { background: rgba(233,69,96,0.1); border: 1px solid rgba(233,69,96,0.3); color: var(--error); }
+    .feedback-icon { font-size: 1.25rem; flex-shrink: 0; }
+    .feedback-text { font-weight: 600; }
+    .feedback-answer { margin-left: auto; color: var(--text-secondary); font-size: 0.85rem; }
+
+    /* ====== Task 6: 解析区 ====== */
+    .explanation-box {
+      background: var(--surface); border-radius: var(--radius-sm);
+      padding: 1rem; margin-bottom: 1rem;
+      animation: expandIn 0.3s ease-out;
+      overflow: hidden;
+    }
+    @keyframes expandIn {
+      from { opacity: 0; max-height: 0; padding-top: 0; padding-bottom: 0; }
+      to { opacity: 1; max-height: 500px; }
+    }
+    .explanation-header {
+      font-size: 0.85rem; font-weight: 600; color: var(--text-secondary);
+      margin-bottom: 0.5rem;
+    }
+    .explanation-content {
+      font-size: 0.9rem; line-height: 1.65; color: var(--text-secondary);
+    }
+
+    /* ====== Task 6: 下一题按钮 ====== */
+    .btn-next {
+      display: block; width: 100%;
+      padding: 0.75rem 1.5rem; font-size: 1rem; font-weight: 600;
+      color: #fff; background: var(--accent-light);
+      border: none; border-radius: var(--radius-sm);
+      cursor: pointer; text-align: center;
+      transition: background 0.15s, transform 0.15s;
+    }
+    .btn-next:hover { background: #1a6db8; transform: scale(1.01); }
+    .btn-next:active { transform: scale(0.98); }
+
+    /* ====== Task 7: 标记按钮 ====== */
+    .btn-mark {
+      display: inline-flex; align-items: center; gap: 0.25rem;
+      padding: 0.3rem 0.65rem;
+      font-size: 0.8rem; font-weight: 500;
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: var(--radius-sm);
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: background 0.15s, border-color 0.15s, color 0.15s;
+      flex-shrink: 0;
+    }
+    .btn-mark:hover { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.25); }
+    .btn-mark.marked {
+      background: rgba(253,203,110,0.12);
+      border-color: rgba(253,203,110,0.35);
+      color: var(--warning);
+    }
+
+    /* ====== Task 7: 考试状态栏 ====== */
+    .exam-status {
+      display: flex; align-items: center; justify-content: center; gap: 1rem;
+      padding: 0.45rem 0.75rem; margin-top: 0.4rem;
+      background: rgba(255,255,255,0.03);
+      border-radius: var(--radius-sm);
+      font-size: 0.78rem; color: var(--text-secondary);
+    }
+    .exam-status.hidden { display: none; }
+    .exam-status strong { color: var(--text-primary); font-weight: 600; }
+
+    .btn-submit-exam {
+      margin-left: 0.5rem;
+      padding: 0.35rem 1rem;
+      font-size: 0.8rem; font-weight: 600;
+      color: #fff; background: var(--error);
+      border: none; border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: background 0.15s, transform 0.1s;
+    }
+    .btn-submit-exam:hover { background: #d63851; }
+    .btn-submit-exam:active { transform: scale(0.96); }
+
     /* ====== 响应式 ====== */
     @media (max-width: 768px) {
       .cover-title { font-size: 1.5rem; letter-spacing: 0.2em; }
@@ -569,6 +689,12 @@
       <div class="progress-stats">
         <span id="progressText">0 / 0</span>
         <span class="correct-rate" id="correctRate">正确率 --</span>
+      </div>
+      <div class="exam-status hidden" id="examStatus">
+        <span>已答：<strong id="examAnswered">0</strong></span>
+        <span>未答：<strong id="examUnanswered">0</strong></span>
+        <span>已标记：<strong id="examMarked">0</strong></span>
+        <button class="btn-submit-exam" id="btnSubmitExam">交卷</button>
       </div>
     </footer>
   </section>
@@ -911,19 +1037,25 @@
       var quizMain = document.getElementById('quizMain');
       if (!quizMain) return;
 
+      var isExam = (state.mode === 'exam');
+      var total = state.questions.length;
+      var current = state.currentIndex + 1;
+      var markHtml = isExam
+        ? '<button class="btn-mark' + (q.marked ? ' marked' : '') + '" id="btnMark">' + (q.marked ? '🏴 已标记' : '🏳 标记') + '</button>'
+        : '';
+
       // 填空题
       if (q.type === 'fill') {
         state.questionType = q.type;
         state.answered = false;
         state.selectedAnswer = null;
-        var totalFill = state.questions.length;
-        var currentFill = state.currentIndex + 1;
         quizMain.innerHTML =
-          '<div class="question-card">' +
+          '<div class="question-card" id="questionCard">' +
             '<div class="card-header">' +
               '<span class="chapter-badge">第' + q.chapter + '章 ' + q.chapterName + '</span>' +
-              '<span class="question-number">' + currentFill + ' / ' + totalFill + '</span>' +
+              '<span class="question-number">' + current + ' / ' + total + '</span>' +
               '<span class="type-badge">填空</span>' +
+              markHtml +
             '</div>' +
             '<div class="question-text">' + q.question + '</div>' +
             '<div class="fill-area">' +
@@ -931,11 +1063,11 @@
                      'placeholder="请输入答案..." autocomplete="off">' +
               '<button class="btn-submit" id="btnSubmit">确认答案</button>' +
             '</div>' +
-            '<div class="feedback hidden" id="questionFeedback"></div>' +
-            '<div class="explanation hidden" id="questionExplanation"></div>' +
-            '<div class="next-btn hidden" id="btnNext">下一题</div>' +
+            '<div id="cardFeedback"></div>' +
+            '<div id="cardActions"></div>' +
           '</div>';
         updateProgress();
+        updateExamStatus();
         return;
       }
 
@@ -943,9 +1075,6 @@
       state.questionType = q.type;
       state.answered = false;
       state.selectedAnswer = null;
-
-      var total = state.questions.length;
-      var current = state.currentIndex + 1;
 
       var optionsHtml = '';
       for (var i = 0; i < q.options.length; i++) {
@@ -959,18 +1088,29 @@
       }
 
       quizMain.innerHTML =
-        '<div class="question-card">' +
+        '<div class="question-card" id="questionCard">' +
           '<div class="card-header">' +
             '<span class="chapter-badge">第' + q.chapter + '章 ' + q.chapterName + '</span>' +
             '<span class="question-number">' + current + ' / ' + total + '</span>' +
             '<span class="type-badge">单选</span>' +
+            markHtml +
           '</div>' +
           '<div class="question-text">' + q.question + '</div>' +
           '<div class="options-list">' + optionsHtml + '</div>' +
-          '<div class="feedback hidden" id="questionFeedback"></div>' +
-          '<div class="explanation hidden" id="questionExplanation"></div>' +
-          '<div class="next-btn hidden" id="btnNext">下一题</div>' +
+          '<div id="cardFeedback"></div>' +
+          '<div id="cardActions"></div>' +
         '</div>';
+      updateExamStatus();
+    }
+
+    /* ====== 触发卡片动画 ====== */
+    function triggerCardAnimation(isCorrect) {
+      var card = document.getElementById('questionCard');
+      if (!card) return;
+      card.classList.remove('card-correct', 'card-wrong');
+      void card.offsetWidth; // 强制回流，确保动画重播
+      card.classList.add(isCorrect ? 'card-correct' : 'card-wrong');
+      setTimeout(function () { card.classList.remove('card-correct', 'card-wrong'); }, 500);
     }
 
     /* ====== 处理选项点击 ====== */
@@ -982,20 +1122,55 @@
       state.selectedAnswer = letter;
       state.answered = true;
 
-      // 标记选中状态
+      // 标记选中状态，添加 disabled 类
       var allBtns = document.querySelectorAll('.option-btn');
       for (var i = 0; i < allBtns.length; i++) {
-        allBtns[i].disabled = true;
+        allBtns[i].classList.add('disabled');
         if (allBtns[i].getAttribute('data-letter') === letter) {
           allBtns[i].classList.add('selected');
         }
       }
 
-      // 立即判题（学习模式和考试模式均采用逐题提交）
-      submitAnswer(letter);
+      // 根据模式分支处理
+      if (state.mode === 'exam') {
+        handleChoiceExam(letter);
+      } else {
+        submitAnswer(letter);
+      }
     }
 
-    /* ====== 提交答案并判题 ====== */
+    /* ====== 考试模式答题 ====== */
+    function handleChoiceExam(userAnswer) {
+      var state = window.quizState;
+      if (!state) return;
+
+      var q = state.questions[state.currentIndex];
+      var isCorrect = (userAnswer === q.answer);
+
+      // 记录结果
+      state.results.push({
+        id: q.id,
+        userAnswer: userAnswer,
+        correctAnswer: q.answer,
+        correct: isCorrect
+      });
+
+      if (!isCorrect) {
+        state.wrongIds.push(q.id);
+      }
+
+      // 考试模式：不显示对错，只显示"下一题"
+      var actions = document.getElementById('cardActions');
+      if (actions) {
+        actions.innerHTML = '<button class="btn-next" id="btnNext">下一题 →</button>';
+      }
+
+      updateProgress();
+      updateExamProgress();
+      saveProgress();
+    }
+
+    /* ====== 提交答案并判题（学习模式） ====== */
     function submitAnswer(userAnswer) {
       var state = window.quizState;
       if (!state) return;
@@ -1024,34 +1199,42 @@
           btn.classList.add('correct');
         }
         if (letter === userAnswer && !isCorrect) {
-          btn.classList.add('incorrect');
+          btn.classList.add('wrong');
         }
       }
 
-      // 显示反馈
-      var feedback = document.getElementById('questionFeedback');
-      var explanation = document.getElementById('questionExplanation');
-      if (feedback) {
-        feedback.classList.remove('hidden');
-        if (isCorrect) {
-          feedback.classList.add('feedback-correct');
-          feedback.textContent = '✓ 回答正确！';
-        } else {
-          feedback.classList.add('feedback-incorrect');
-          feedback.textContent = '✗ 回答错误！正确答案是 ' + q.answer;
-        }
-      }
-      if (explanation && q.explanation) {
-        explanation.classList.remove('hidden');
-        explanation.textContent = '💡 ' + q.explanation;
-      }
+      // 卡片动画
+      triggerCardAnimation(isCorrect);
 
-      // 显示下一题按钮
-      var nextBtn = document.getElementById('btnNext');
-      if (nextBtn) nextBtn.classList.remove('hidden');
+      // 显示反馈横幅 + 解析
+      showChoiceFeedback(isCorrect, userAnswer, q.answer, q.explanation);
 
       updateProgress();
       saveProgress();
+    }
+
+    /* ====== 学习模式选择题反馈 ====== */
+    function showChoiceFeedback(isCorrect, userAnswer, correctAnswer, explanation) {
+      var feedback = document.getElementById('cardFeedback');
+      var actions = document.getElementById('cardActions');
+
+      if (feedback) {
+        feedback.innerHTML =
+          '<div class="feedback-banner ' + (isCorrect ? 'feedback-correct' : 'feedback-wrong') + '">' +
+            '<span class="feedback-icon">' + (isCorrect ? '✅' : '❌') + '</span>' +
+            '<span class="feedback-text">' + (isCorrect ? '回答正确！' : '回答错误') + '</span>' +
+            (!isCorrect ? '<span class="feedback-answer">正确答案：' + correctAnswer + '</span>' : '') +
+          '</div>' +
+          (explanation ?
+            '<div class="explanation-box">' +
+              '<div class="explanation-header">📖 解析</div>' +
+              '<div class="explanation-content">' + explanation + '</div>' +
+            '</div>' : '');
+      }
+
+      if (actions) {
+        actions.innerHTML = '<button class="btn-next" id="btnNext">下一题 →</button>';
+      }
     }
 
     /* ====== 填空题答案模糊匹配 ====== */
@@ -1082,6 +1265,7 @@
       var isCorrect = matchFillAnswer(userAnswer, q.answer);
 
       state.answered = true;
+      state.selectedAnswer = userAnswer;
       state.results.push({
         id: q.id,
         userAnswer: userAnswer,
@@ -1095,36 +1279,45 @@
       var btnSubmit = document.getElementById('btnSubmit');
       if (btnSubmit) btnSubmit.disabled = true;
 
-      // 显示反馈
-      showFillFeedback(isCorrect, q.answer, q.explanation);
-    }
-
-    /* ====== 填空题反馈 ====== */
-    function showFillFeedback(isCorrect, correctAnswer, explanation) {
-      var feedback = document.getElementById('questionFeedback');
-      var expl = document.getElementById('questionExplanation');
-
-      if (feedback) {
-        feedback.classList.remove('hidden');
-        if (isCorrect) {
-          feedback.classList.add('feedback-correct');
-          feedback.textContent = '✓ 回答正确！';
-        } else {
-          feedback.classList.add('feedback-incorrect');
-          feedback.textContent = '✗ 回答错误！正确答案是 ' + correctAnswer;
-        }
+      // 根据模式分支
+      if (state.mode === 'exam') {
+        // 考试模式：只显示下一题
+        var actions = document.getElementById('cardActions');
+        if (actions) {
+          actions.innerHTML = '<button class="btn-next" id="btnNext">下一题 →</button>';
+          }
+        updateExamProgress();
+      } else {
+        // 学习模式：显示反馈
+        showFillFeedback(isCorrect, q.answer, q.explanation);
       }
-      if (expl && explanation) {
-        expl.classList.remove('hidden');
-        expl.textContent = '💡 ' + explanation;
-      }
-
-      // 显示下一题按钮
-      var nextBtn = document.getElementById('btnNext');
-      if (nextBtn) nextBtn.classList.remove('hidden');
 
       updateProgress();
       saveProgress();
+    }
+
+    /* ====== 学习模式填空题反馈 ====== */
+    function showFillFeedback(isCorrect, correctAnswer, explanation) {
+      var feedback = document.getElementById('cardFeedback');
+      var actions = document.getElementById('cardActions');
+
+      if (feedback) {
+        feedback.innerHTML =
+          '<div class="feedback-banner ' + (isCorrect ? 'feedback-correct' : 'feedback-wrong') + '">' +
+            '<span class="feedback-icon">' + (isCorrect ? '✅' : '❌') + '</span>' +
+            '<span class="feedback-text">' + (isCorrect ? '回答正确！' : '回答错误') + '</span>' +
+            (!isCorrect ? '<span class="feedback-answer">正确答案：' + correctAnswer + '</span>' : '') +
+          '</div>' +
+          (explanation ?
+            '<div class="explanation-box">' +
+              '<div class="explanation-header">📖 解析</div>' +
+              '<div class="explanation-content">' + explanation + '</div>' +
+            '</div>' : '');
+      }
+
+      if (actions) {
+        actions.innerHTML = '<button class="btn-next" id="btnNext">下一题 →</button>';
+      }
     }
 
     /* ====== 下一题 ====== */
@@ -1201,6 +1394,9 @@
           correctRate.textContent = '正确率 --';
         }
       }
+
+      // 考试模式：更新考试状态栏
+      updateExamProgress();
     }
 
     /* ====== 显示结算页（占位，Task 5 扩展） ====== */
@@ -1245,6 +1441,90 @@
           timestamp: Date.now()
         }));
       } catch (e) { /* quota exceeded, ignore */ }
+    }
+
+    /* ====== 题目标记功能 ====== */
+    function toggleMark() {
+      var state = window.quizState;
+      if (!state) return;
+      var q = state.questions[state.currentIndex];
+      q.marked = !q.marked;
+      updateMarkButton();
+      updateExamProgress();
+    }
+
+    function updateMarkButton() {
+      var state = window.quizState;
+      if (!state) return;
+      var q = state.questions[state.currentIndex];
+      var btn = document.getElementById('btnMark');
+      if (btn) {
+        btn.textContent = q.marked ? '🏴 已标记' : '🏳 标记';
+        if (q.marked) {
+          btn.classList.add('marked');
+        } else {
+          btn.classList.remove('marked');
+        }
+      }
+    }
+
+    /* ====== 考试进度更新 ====== */
+    function updateExamProgress() {
+      var state = window.quizState;
+      if (!state) return;
+
+      var total = state.questions.length;
+      var answered = state.results.length;
+      var unanswered = total - answered;
+      var marked = 0;
+      for (var i = 0; i < state.questions.length; i++) {
+        if (state.questions[i].marked) marked++;
+      }
+
+      var answeredEl = document.getElementById('examAnswered');
+      var unansweredEl = document.getElementById('examUnanswered');
+      var markedEl = document.getElementById('examMarked');
+      if (answeredEl) answeredEl.textContent = answered;
+      if (unansweredEl) unansweredEl.textContent = unanswered;
+      if (markedEl) markedEl.textContent = marked;
+    }
+
+    /* ====== 考试状态栏显隐 ====== */
+    function updateExamStatus() {
+      var state = window.quizState;
+      var examStatus = document.getElementById('examStatus');
+      if (!examStatus) return;
+      if (state && state.mode === 'exam') {
+        examStatus.classList.remove('hidden');
+      } else {
+        examStatus.classList.add('hidden');
+      }
+      updateExamProgress();
+    }
+
+    /* ====== 交卷 ====== */
+    function finishExam() {
+      var state = window.quizState;
+      if (!state) return;
+
+      // 未答题目标记为错误
+      var submittedIds = {};
+      for (var i = 0; i < state.results.length; i++) {
+        submittedIds[state.results[i].id] = true;
+      }
+      for (var j = 0; j < state.questions.length; j++) {
+        var q = state.questions[j];
+        if (!submittedIds[q.id]) {
+          state.results.push({
+            id: q.id,
+            userAnswer: null,
+            correct: false
+          });
+          state.wrongIds.push(q.id);
+        }
+      }
+
+      showResult();
     }
 
     /* ====== 选择器变更处理 ====== */
@@ -1341,6 +1621,11 @@
             submitFillAnswer();
             return;
           }
+          // 标记按钮
+          if (e.target.id === 'btnMark' || e.target.closest('#btnMark')) {
+            toggleMark();
+            return;
+          }
           // 选项按钮
           var optionBtn = e.target.closest('.option-btn');
           if (optionBtn) {
@@ -1350,11 +1635,30 @@
             }
             return;
           }
-          // 下一题按钮
-          var nextBtn = e.target.closest('.next-btn');
+          // 下一题按钮（.btn-next 和 .next-btn 都支持）
+          var nextBtn = e.target.closest('.btn-next') || e.target.closest('.next-btn');
           if (nextBtn) {
             nextQuestion();
             return;
+          }
+        });
+      }
+
+      // ====== 考试交卷按钮 ======
+      var btnSubmitExam = document.getElementById('btnSubmitExam');
+      if (btnSubmitExam) {
+        btnSubmitExam.addEventListener('click', function () {
+          var state = window.quizState;
+          if (!state) return;
+          var total = state.questions.length;
+          var answered = state.results.length;
+          var unanswered = total - answered;
+          var msg = '确定要交卷吗？';
+          if (unanswered > 0) {
+            msg += '\n还有 ' + unanswered + ' 题未作答！';
+          }
+          if (confirm(msg)) {
+            finishExam();
           }
         });
       }
