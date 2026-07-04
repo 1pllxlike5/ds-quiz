@@ -455,11 +455,64 @@
 
     .correct-rate { color: var(--correct); }
 
-    /* ====== 结算页占位 ====== */
+    /* ====== 结算页 ====== */
     .result-container {
-      text-align: center; padding: 2rem;
-      max-width: 500px; width: 100%;
+      max-width: 500px; width: 100%; padding: 2rem 1.5rem;
+      text-align: center; overflow-y: auto; max-height: 100vh;
     }
+    .result-title { font-size: 1.5rem; margin-bottom: 1.5rem; }
+
+    .result-ring { margin: 0 auto 1.5rem; }
+
+    .chapter-scores {
+      display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.5rem;
+      text-align: left;
+    }
+    .chapter-score-row {
+      display: flex; align-items: center; gap: 0.75rem;
+      padding: 0.5rem 0.75rem; background: var(--bg-card);
+      border-radius: var(--radius-sm);
+    }
+    .chapter-score-name { width: 5em; font-size: 0.8rem; color: var(--text-secondary); }
+    .chapter-score-bar {
+      flex: 1; height: 6px; background: rgba(255,255,255,0.08);
+      border-radius: 3px; overflow: hidden;
+    }
+    .chapter-score-fill {
+      height: 100%; background: var(--correct); border-radius: 3px;
+      transition: width 0.8s ease-out;
+    }
+    .chapter-score-pct { width: 3em; font-size: 0.8rem; color: var(--text-primary); text-align: right; }
+
+    .wrong-review {
+      text-align: left; margin-bottom: 1.5rem;
+    }
+    .wrong-title {
+      font-size: 0.95rem; font-weight: 600; color: var(--error);
+      margin-bottom: 0.75rem;
+    }
+    .wrong-item {
+      background: var(--bg-card); border-radius: var(--radius-sm);
+      padding: 0.75rem 1rem; margin-bottom: 0.5rem;
+      border-left: 3px solid var(--error);
+    }
+    .wrong-item .question-text { font-size: 0.85rem; margin-bottom: 0.5rem; }
+    .wrong-item .wrong-detail { font-size: 0.8rem; color: var(--text-secondary); }
+    .wrong-item .wrong-detail span { color: var(--error); }
+    .wrong-item .wrong-detail .correct-ans { color: var(--correct); }
+
+    .result-actions {
+      display: flex; flex-direction: column; gap: 0.75rem;
+    }
+    .btn-secondary {
+      display: block; width: 100%; padding: 0.75rem 1.5rem;
+      font-size: 0.95rem; font-weight: 600;
+      color: var(--text-secondary); background: var(--bg-card);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius);
+      cursor: pointer; transition: background 0.15s;
+    }
+    .btn-secondary:hover { background: var(--bg-card-hover); }
 
     /* ====== Task 6: 卡片动画 ====== */
     .question-card.card-correct {
@@ -699,10 +752,30 @@
     </footer>
   </section>
 
-  <!-- ====== 结算页（占位） ====== -->
+  <!-- ====== 结算页 ====== -->
   <section id="result" class="page">
     <div class="result-container">
-      <!-- 后续任务填充 -->
+      <h2 class="result-title">刷题完成！ 🎉</h2>
+
+      <div class="result-ring" id="resultRing">
+        <svg viewBox="0 0 160 160" width="160" height="160">
+          <circle cx="80" cy="80" r="70" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="12"/>
+          <circle cx="80" cy="80" r="70" fill="none" stroke="var(--correct)" stroke-width="12"
+                  stroke-linecap="round" stroke-dasharray="440" id="ringProgress"
+                  transform="rotate(-90 80 80)"/>
+          <text x="80" y="72" text-anchor="middle" fill="#eaeaea" font-size="28" font-weight="700" id="ringPercent">0%</text>
+          <text x="80" y="94" text-anchor="middle" fill="#a0a0b0" font-size="12">正确率</text>
+        </svg>
+      </div>
+
+      <div class="chapter-scores" id="chapterScores"></div>
+
+      <div class="wrong-review" id="wrongReview"></div>
+
+      <div class="result-actions">
+        <button class="btn-primary" id="btnRetryWrong">重刷错题</button>
+        <button class="btn-secondary" id="btnRestart">重新开始</button>
+      </div>
     </div>
   </section>
 
@@ -963,9 +1036,68 @@
       };
     }
 
-    /* ====== 保存配置 ====== */
-    function saveConfig(config) {
-      localStorage.setItem('ds_quiz_config', JSON.stringify(config));
+    /* ====== localStorage 存储键名 ====== */
+    var STORAGE_KEY = 'ds_quiz_data';
+
+    /* ====== 保存配置（防抖） ====== */
+    function saveConfig() {
+      clearTimeout(window._saveTimeout);
+      window._saveTimeout = setTimeout(function () {
+        var data = loadProgress() || {};
+        data.lastConfig = getConfig();
+        data.lastUpdated = Date.now();
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+      }, 500);
+    }
+
+    /* ====== 读取进度 ====== */
+    function loadProgress() {
+      try {
+        var raw = localStorage.getItem(STORAGE_KEY);
+        return raw ? JSON.parse(raw) : null;
+      } catch (e) {
+        return null;
+      }
+    }
+
+    /* ====== 读取统计 ====== */
+    function loadStats() {
+      var data = loadProgress();
+      return (data && data.stats) ? data.stats : {};
+    }
+
+    /* ====== 保存统计（累加） ====== */
+    function saveStats() {
+      var state = window.quizState;
+      if (!state) return;
+      var existing = loadStats();
+      for (var i = 0; i < state.results.length; i++) {
+        var r = state.results[i];
+        if (!existing[r.id]) existing[r.id] = { correct: 0, wrong: 0 };
+        if (r.correct) existing[r.id].correct++;
+        else existing[r.id].wrong++;
+      }
+      var data = loadProgress() || {};
+      data.stats = existing;
+      data.lastConfig = getConfig();
+      data.lastUpdated = Date.now();
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+    }
+
+    /* ====== 更新继续上次按钮 ====== */
+    function updateContinueButton() {
+      var data = loadProgress();
+      var div = document.getElementById('lastProgress');
+      var text = document.getElementById('lastProgressText');
+
+      if (data && data.lastConfig) {
+        var cfg = data.lastConfig;
+        var chName = cfg.chapter === 0 ? '全部章节' : '第' + cfg.chapter + '章';
+        text.textContent = '上次：' + chName + ' · ' + (cfg.mode === 'learn' ? '学习模式' : '考试模式');
+        div.classList.remove('hidden');
+      } else {
+        div.classList.add('hidden');
+      }
     }
 
     /* ====== Fisher-Yates 洗牌 ====== */
@@ -1167,7 +1299,6 @@
 
       updateProgress();
       updateExamProgress();
-      saveProgress();
     }
 
     /* ====== 提交答案并判题（学习模式） ====== */
@@ -1210,7 +1341,6 @@
       showChoiceFeedback(isCorrect, userAnswer, q.answer, q.explanation);
 
       updateProgress();
-      saveProgress();
     }
 
     /* ====== 学习模式选择题反馈 ====== */
@@ -1293,7 +1423,6 @@
       }
 
       updateProgress();
-      saveProgress();
     }
 
     /* ====== 学习模式填空题反馈 ====== */
@@ -1399,48 +1528,117 @@
       updateExamProgress();
     }
 
-    /* ====== 显示结算页（占位，Task 5 扩展） ====== */
-    function showResult() {
-      saveProgress();
-
-      var state = window.quizState;
-      var total = state ? state.questions.length : 0;
-      var correct = 0;
-      if (state) {
-        for (var i = 0; i < state.results.length; i++) {
-          if (state.results[i].correct) correct++;
-        }
-      }
-
-      console.log('[DS刷题] 答题完成！共 ' + total + ' 题，正确 ' + correct + ' 题');
-
-      // 渲染结果概览到 result 页面
-      var resultContainer = document.querySelector('.result-container');
-      if (resultContainer) {
-        var rate = total > 0 ? Math.round(correct / total * 100) : 0;
-        resultContainer.innerHTML =
-          '<h2 style="font-size:1.5rem;margin-bottom:1rem;">答题完成</h2>' +
-          '<div style="font-size:3rem;font-weight:700;color:var(--correct);margin-bottom:0.5rem;">' + correct + ' / ' + total + '</div>' +
-          '<p style="color:var(--text-secondary);margin-bottom:1.5rem;">正确率 ' + rate + '%</p>' +
-          '<button class="btn-primary" onclick="switchPage(\'result\',\'cover\')">返回封面</button>';
-      }
-
-      switchPage('quiz', 'result');
+    /* ====== 重置答题状态 ====== */
+    function resetQuizState() {
+      window.quizState = null;
     }
 
-    /* ====== 保存进度到 localStorage ====== */
-    function saveProgress() {
+    /* ====== 渲染章节得分 ====== */
+    function renderChapterScores() {
       var state = window.quizState;
       if (!state) return;
-      try {
-        localStorage.setItem('ds_quiz_progress', JSON.stringify({
-          currentIndex: state.currentIndex,
-          totalCount: state.questions.length,
-          results: state.results,
-          mode: state.mode,
-          timestamp: Date.now()
-        }));
-      } catch (e) { /* quota exceeded, ignore */ }
+      var byChapter = {};
+      for (var i = 0; i < state.results.length; i++) {
+        var r = state.results[i];
+        var q = null;
+        for (var k = 0; k < allQuestions.length; k++) {
+          if (allQuestions[k].id === r.id) { q = allQuestions[k]; break; }
+        }
+        if (!q) continue;
+        if (!byChapter[q.chapter]) byChapter[q.chapter] = { total: 0, correct: 0, name: q.chapterName };
+        byChapter[q.chapter].total++;
+        if (r.correct) byChapter[q.chapter].correct++;
+      }
+
+      var chapters = [];
+      for (var ch in byChapter) {
+        if (byChapter.hasOwnProperty(ch)) chapters.push(ch);
+      }
+      chapters.sort();
+      var html = '';
+      for (var ci = 0; ci < chapters.length; ci++) {
+        var ch = chapters[ci];
+        var data = byChapter[ch];
+        var pct = Math.round((data.correct / data.total) * 100);
+        html += '<div class="chapter-score-row">' +
+          '<span class="chapter-score-name">' + data.name + '</span>' +
+          '<div class="chapter-score-bar">' +
+            '<div class="chapter-score-fill" style="width:' + pct + '%"></div>' +
+          '</div>' +
+          '<span class="chapter-score-pct">' + pct + '%</span>' +
+        '</div>';
+      }
+
+      document.getElementById('chapterScores').innerHTML = html;
+    }
+
+    /* ====== 渲染错题回顾 ====== */
+    function renderWrongReview() {
+      var state = window.quizState;
+      if (!state) return;
+      var wrongResults = [];
+      for (var i = 0; i < state.results.length; i++) {
+        if (!state.results[i].correct) wrongResults.push(state.results[i]);
+      }
+
+      if (wrongResults.length === 0) {
+        document.getElementById('wrongReview').innerHTML =
+          '<div class="wrong-title">🎯 全部正确，太棒了！</div>';
+        return;
+      }
+
+      var items = '';
+      for (var j = 0; j < wrongResults.length; j++) {
+        var r = wrongResults[j];
+        var q = null;
+        for (var k = 0; k < allQuestions.length; k++) {
+          if (allQuestions[k].id === r.id) { q = allQuestions[k]; break; }
+        }
+        if (!q) continue;
+        items += '<div class="wrong-item">' +
+          '<div class="question-text">' + q.question + '</div>' +
+          '<div class="wrong-detail">' +
+            '你的答案：<span>' + (r.userAnswer || '未作答') + '</span> &nbsp;' +
+            '正确答案：<span class="correct-ans">' + q.answer + '</span>' +
+          '</div>' +
+        '</div>';
+      }
+
+      document.getElementById('wrongReview').innerHTML =
+        '<div class="wrong-title">📋 错题回顾 (' + wrongResults.length + ')</div>' +
+        items;
+    }
+
+    /* ====== 显示结算页 ====== */
+    function showResult() {
+      var state = window.quizState;
+      if (!state) return;
+
+      var total = state.results.length;
+      var correct = 0;
+      for (var i = 0; i < state.results.length; i++) {
+        if (state.results[i].correct) correct++;
+      }
+      var pct = total > 0 ? Math.round((correct / total) * 100) : 0;
+
+      // 圆环图表
+      var ring = document.getElementById('ringProgress');
+      if (ring) {
+        var circumference = 2 * Math.PI * 70;
+        ring.style.strokeDasharray = circumference;
+        ring.style.strokeDashoffset = circumference - (pct / 100) * circumference;
+      }
+      var ringPct = document.getElementById('ringPercent');
+      if (ringPct) ringPct.textContent = pct + '%';
+
+      // 章节得分和错题回顾
+      renderChapterScores();
+      renderWrongReview();
+
+      // 保存统计到 localStorage
+      saveStats();
+
+      switchPage('quiz', 'result');
     }
 
     /* ====== 题目标记功能 ====== */
@@ -1530,7 +1728,7 @@
     /* ====== 选择器变更处理 ====== */
     function onConfigChange() {
       var config = getConfig();
-      saveConfig(config);
+      saveConfig();
 
       // 预览匹配题目数量
       var filtered = filterQuestions(config);
@@ -1560,10 +1758,20 @@
         });
       }
 
-      // ====== 继续按钮 ======
+      // ====== 继续上次按钮 ======
       var btnContinue = document.getElementById('btnContinue');
       if (btnContinue) {
         btnContinue.addEventListener('click', function () {
+          var data = loadProgress();
+          if (data && data.lastConfig) {
+            var cfg = data.lastConfig;
+            var selChapter = document.getElementById('selChapter');
+            var selMode = document.getElementById('selMode');
+            var selCount = document.getElementById('selCount');
+            if (selChapter) selChapter.value = cfg.chapter;
+            if (selMode) selMode.value = cfg.mode;
+            if (selCount) selCount.value = cfg.count;
+          }
           switchPage('cover', 'quiz');
           startQuiz();
         });
@@ -1579,38 +1787,24 @@
         });
       }
 
-      // ====== 恢复上次配置 ======
-      var savedConfig = localStorage.getItem('ds_quiz_config');
+      // ====== 恢复上次配置并更新继续按钮 ======
       var selChapter = document.getElementById('selChapter');
       var selMode = document.getElementById('selMode');
       var selCount = document.getElementById('selCount');
-      if (savedConfig) {
-        try {
-          var saved = JSON.parse(savedConfig);
-          if (selChapter) selChapter.value = saved.chapter;
-          if (selMode) selMode.value = saved.mode;
-          if (selCount) selCount.value = saved.count;
-        } catch (e) { /* ignore */ }
+      var savedData = loadProgress();
+      if (savedData && savedData.lastConfig) {
+        var cfg = savedData.lastConfig;
+        if (selChapter) selChapter.value = cfg.chapter;
+        if (selMode) selMode.value = cfg.mode;
+        if (selCount) selCount.value = cfg.count;
       }
+
+      updateContinueButton();
 
       // ====== 选择器变更事件 ======
       if (selChapter) selChapter.addEventListener('change', onConfigChange);
       if (selMode) selMode.addEventListener('change', onConfigChange);
       if (selCount) selCount.addEventListener('change', onConfigChange);
-
-      // ====== 检查 localStorage 是否有保存的进度 ======
-      var savedProgress = localStorage.getItem('ds_quiz_progress');
-      var lastProgress = document.getElementById('lastProgress');
-      var lastProgressText = document.getElementById('lastProgressText');
-      if (savedProgress && lastProgress && lastProgressText) {
-        try {
-          var progress = JSON.parse(savedProgress);
-          lastProgress.classList.remove('hidden');
-          lastProgressText.textContent = '继续上次：第 ' + (progress.currentIndex + 1) + ' / ' + progress.totalCount + ' 题';
-        } catch (e) {
-          // 无效的进度数据，保持隐藏
-        }
-      }
 
       // ====== 答题区事件委托 ======
       var quizMainEl = document.getElementById('quizMain');
@@ -1699,6 +1893,58 @@
           }
         }
       });
+
+      // ====== 结算页：重刷错题按钮 ======
+      var btnRetryWrong = document.getElementById('btnRetryWrong');
+      if (btnRetryWrong) {
+        btnRetryWrong.addEventListener('click', function () {
+          var state = window.quizState;
+          if (!state) return;
+          var wrongIds = [];
+          for (var i = 0; i < state.results.length; i++) {
+            if (!state.results[i].correct) wrongIds.push(state.results[i].id);
+          }
+          if (wrongIds.length === 0) {
+            alert('没有错题！');
+            return;
+          }
+          var pool = [];
+          for (var j = 0; j < allQuestions.length; j++) {
+            if (wrongIds.indexOf(allQuestions[j].id) !== -1) {
+              pool.push(allQuestions[j]);
+            }
+          }
+          if (pool.length === 0) {
+            alert('题库中未找到错题对应的题目！');
+            return;
+          }
+          pool = shuffleArray(pool);
+          window.quizState = {
+            questions: pool,
+            currentIndex: 0,
+            mode: 'learn',
+            answered: false,
+            selectedAnswer: null,
+            questionType: null,
+            results: [],
+            wrongIds: []
+          };
+          switchPage('result', 'quiz');
+          updateProgress();
+          updateExamStatus();
+          renderCurrentQuestion();
+        });
+      }
+
+      // ====== 结算页：重新开始按钮 ======
+      var btnRestart = document.getElementById('btnRestart');
+      if (btnRestart) {
+        btnRestart.addEventListener('click', function () {
+          resetQuizState();
+          switchPage('result', 'cover');
+          updateContinueButton();
+        });
+      }
     });
   </script>
 
