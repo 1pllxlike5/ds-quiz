@@ -681,17 +681,17 @@
         </div>
         <div class="stat-divider"></div>
         <div class="stat-item">
-          <span class="stat-num">185</span>
+          <span class="stat-num">112</span>
           <span class="stat-label">选择题</span>
         </div>
         <div class="stat-divider"></div>
         <div class="stat-item">
-          <span class="stat-num">326</span>
-          <span class="stat-label">填空题</span>
+          <span class="stat-num">78</span>
+          <span class="stat-label">判断题</span>
         </div>
         <div class="stat-divider"></div>
         <div class="stat-item">
-          <span class="stat-num">511</span>
+          <span class="stat-num">190</span>
           <span class="stat-label">总题数</span>
         </div>
       </div>
@@ -1179,6 +1179,44 @@
         return;
       }
 
+      // 判断题
+      if (q.type === 'judge') {
+        state.questionType = q.type;
+        state.answered = false;
+        state.selectedAnswer = null;
+
+        var judgeOptions = [
+          'A. 正确',
+          'B. 错误'
+        ];
+        var judgeHtml = '';
+        for (var j = 0; j < judgeOptions.length; j++) {
+          var letter = judgeOptions[j].charAt(0);
+          var text = judgeOptions[j].substring(2);
+          judgeHtml +=
+            '<button class="option-btn" data-letter="' + letter + '">' +
+              '<span class="option-letter">' + letter + '</span>' +
+              '<span class="option-text">' + text + '</span>' +
+            '</button>';
+        }
+
+        quizMain.innerHTML =
+          '<div class="question-card" id="questionCard">' +
+            '<div class="card-header">' +
+              '<span class="chapter-badge">第' + q.chapter + '章 ' + q.chapterName + '</span>' +
+              '<span class="question-number">' + current + ' / ' + total + '</span>' +
+              '<span class="type-badge">判断</span>' +
+              markHtml +
+            '</div>' +
+            '<div class="question-text">' + q.question + '</div>' +
+            '<div class="options-list">' + judgeHtml + '</div>' +
+            '<div id="cardFeedback"></div>' +
+            '<div id="cardActions"></div>' +
+          '</div>';
+        updateExamStatus();
+        return;
+      }
+
       // 单选题
       state.questionType = q.type;
       state.answered = false;
@@ -1253,7 +1291,12 @@
       if (!state) return;
 
       var q = state.questions[state.currentIndex];
-      var isCorrect = (userAnswer === q.answer);
+      // 判断题：userAnswer 是 A/B，映射到 正确/错误 再比较
+      var effectiveAnswer = userAnswer;
+      if (q.type === 'judge') {
+        effectiveAnswer = (userAnswer === 'A') ? '正确' : '错误';
+      }
+      var isCorrect = (effectiveAnswer === q.answer);
 
       // 记录结果
       state.results.push({
@@ -1283,7 +1326,12 @@
       if (!state) return;
 
       var q = state.questions[state.currentIndex];
-      var isCorrect = (userAnswer === q.answer);
+      // 判断题：userAnswer 是 A/B，需映射到 正确/错误
+      var effectiveAnswer = userAnswer;
+      if (q.type === 'judge') {
+        effectiveAnswer = (userAnswer === 'A') ? '正确' : '错误';
+      }
+      var isCorrect = (effectiveAnswer === q.answer);
 
       // 记录结果
       state.results.push({
@@ -1302,7 +1350,12 @@
       for (var i = 0; i < allBtns.length; i++) {
         var btn = allBtns[i];
         var letter = btn.getAttribute('data-letter');
-        if (letter === q.answer) {
+        // 判断题：answer是"正确"/"错误"，需映射到字母
+        var correctLetter = q.answer;
+        if (q.type === 'judge') {
+          correctLetter = (q.answer === '正确') ? 'A' : 'B';
+        }
+        if (letter === correctLetter) {
           btn.classList.add('correct');
         }
         if (letter === userAnswer && !isCorrect) {
@@ -1441,9 +1494,14 @@
       }
       if (!alreadySubmitted) {
         // 未提交的题目（如填空题）：记录为跳过/未答
-        var isCorrect = q.type === 'fill'
-          ? false
-          : (state.selectedAnswer === q.answer);
+        var isCorrect;
+        if (q.type === 'fill') {
+          isCorrect = false;
+        } else if (q.type === 'judge') {
+          isCorrect = ((state.selectedAnswer === 'A' ? '正确' : '错误') === q.answer);
+        } else {
+          isCorrect = (state.selectedAnswer === q.answer);
+        }
         state.results.push({
           id: q.id,
           userAnswer: state.selectedAnswer || null,
@@ -1571,11 +1629,16 @@
           if (allQuestions[k].id === r.id) { q = allQuestions[k]; break; }
         }
         if (!q) continue;
+        // 判断题：将 A/B 映射为可读文本
+        var userDisplay = r.userAnswer || '未作答';
+        if (q.type === 'judge' && r.userAnswer === 'A') userDisplay = 'A. 正确';
+        if (q.type === 'judge' && r.userAnswer === 'B') userDisplay = 'B. 错误';
+        var correctDisplay = q.answer;
         items += '<div class="wrong-item">' +
           '<div class="question-text">' + q.question + '</div>' +
           '<div class="wrong-detail">' +
-            '你的答案：<span>' + (r.userAnswer || '未作答') + '</span> &nbsp;' +
-            '正确答案：<span class="correct-ans">' + q.answer + '</span>' +
+            '你的答案：<span>' + userDisplay + '</span> &nbsp;' +
+            '正确答案：<span class="correct-ans">' + correctDisplay + '</span>' +
           '</div>' +
         '</div>';
       }
