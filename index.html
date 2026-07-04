@@ -327,6 +327,43 @@
       border-color: rgba(255,255,255,0.08);
     }
 
+    /* ====== 填空题 ====== */
+    .fill-area {
+      display: flex; gap: 0.75rem; margin-bottom: 1rem;
+    }
+
+    .fill-input {
+      flex: 1; padding: 0.75rem 1rem;
+      font-size: 1rem; font-family: var(--font-mono);
+      background: var(--surface);
+      border: 2px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius-sm);
+      color: var(--text-primary);
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .fill-input:focus {
+      border-color: var(--accent-light);
+    }
+    .fill-input:disabled {
+      opacity: 0.55;
+      cursor: default;
+    }
+
+    .btn-submit {
+      padding: 0.75rem 1.5rem;
+      font-size: 0.95rem; font-weight: 600;
+      color: #fff; background: var(--accent-light);
+      border: none; border-radius: var(--radius-sm);
+      cursor: pointer; white-space: nowrap;
+      transition: background 0.15s;
+    }
+    .btn-submit:hover { background: #1a6db8; }
+    .btn-submit:disabled {
+      opacity: 0.55;
+      cursor: default;
+    }
+
     /* ====== 反馈信息 ====== */
     .feedback {
       margin-top: 1rem;
@@ -1061,16 +1098,16 @@
       var answered = state.results.length;
 
       var progressText = document.getElementById('progressText');
-      var progressBar = document.getElementById('progressBar');
+      var progressFill = document.getElementById('progressFill');
       var correctRate = document.getElementById('correctRate');
 
       if (progressText) {
         progressText.textContent = answered + ' / ' + total;
       }
 
-      if (progressBar && total > 0) {
+      if (progressFill && total > 0) {
         var pct = Math.round((answered / total) * 100);
-        progressBar.style.width = pct + '%';
+        progressFill.style.width = pct + '%';
       }
 
       if (correctRate) {
