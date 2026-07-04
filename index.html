@@ -911,10 +911,10 @@
       var quizMain = document.getElementById('quizMain');
       if (!quizMain) return;
 
-      // 填空题占位
+      // 填空题
       if (q.type === 'fill') {
-        state.questionType = 'fill';
-        state.answered = true;
+        state.questionType = q.type;
+        state.answered = false;
         state.selectedAnswer = null;
         var totalFill = state.questions.length;
         var currentFill = state.currentIndex + 1;
@@ -926,15 +926,21 @@
               '<span class="type-badge">填空</span>' +
             '</div>' +
             '<div class="question-text">' + q.question + '</div>' +
-            '<div class="fill-placeholder">填空题暂不支持</div>' +
-            '<div class="next-btn" id="btnNext">下一题</div>' +
+            '<div class="fill-area">' +
+              '<input type="text" class="fill-input" id="fillInput" ' +
+                     'placeholder="请输入答案..." autocomplete="off">' +
+              '<button class="btn-submit" id="btnSubmit">确认答案</button>' +
+            '</div>' +
+            '<div class="feedback hidden" id="questionFeedback"></div>' +
+            '<div class="explanation hidden" id="questionExplanation"></div>' +
+            '<div class="next-btn hidden" id="btnNext">下一题</div>' +
           '</div>';
         updateProgress();
         return;
       }
 
       // 单选题
-      state.questionType = 'single';
+      state.questionType = q.type;
       state.answered = false;
       state.selectedAnswer = null;
 
@@ -1038,6 +1044,79 @@
       if (explanation && q.explanation) {
         explanation.classList.remove('hidden');
         explanation.textContent = '💡 ' + q.explanation;
+      }
+
+      // 显示下一题按钮
+      var nextBtn = document.getElementById('btnNext');
+      if (nextBtn) nextBtn.classList.remove('hidden');
+
+      updateProgress();
+      saveProgress();
+    }
+
+    /* ====== 填空题答案模糊匹配 ====== */
+    function matchFillAnswer(userInput, correctAnswer) {
+      var input = userInput.trim().replace(/\s+/g, ' ').toLowerCase();
+      var answers = correctAnswer.split('|').map(function (a) {
+        return a.trim().replace(/\s+/g, ' ').toLowerCase();
+      });
+      return answers.includes(input);
+    }
+
+    /* ====== 填空题提交 ====== */
+    function submitFillAnswer() {
+      var state = window.quizState;
+      if (!state || state.answered) return;
+
+      var input = document.getElementById('fillInput');
+      if (!input) return;
+
+      var userAnswer = input.value.trim();
+      if (!userAnswer) {
+        input.style.borderColor = 'var(--error)';
+        input.placeholder = '请先输入答案！';
+        return;
+      }
+
+      var q = state.questions[state.currentIndex];
+      var isCorrect = matchFillAnswer(userAnswer, q.answer);
+
+      state.answered = true;
+      state.results.push({
+        id: q.id,
+        userAnswer: userAnswer,
+        correct: isCorrect,
+      });
+
+      if (!isCorrect) state.wrongIds.push(q.id);
+
+      // 禁用输入
+      input.disabled = true;
+      var btnSubmit = document.getElementById('btnSubmit');
+      if (btnSubmit) btnSubmit.disabled = true;
+
+      // 显示反馈
+      showFillFeedback(isCorrect, q.answer, q.explanation);
+    }
+
+    /* ====== 填空题反馈 ====== */
+    function showFillFeedback(isCorrect, correctAnswer, explanation) {
+      var feedback = document.getElementById('questionFeedback');
+      var expl = document.getElementById('questionExplanation');
+
+      if (feedback) {
+        feedback.classList.remove('hidden');
+        if (isCorrect) {
+          feedback.classList.add('feedback-correct');
+          feedback.textContent = '✓ 回答正确！';
+        } else {
+          feedback.classList.add('feedback-incorrect');
+          feedback.textContent = '✗ 回答错误！正确答案是 ' + correctAnswer;
+        }
+      }
+      if (expl && explanation) {
+        expl.classList.remove('hidden');
+        expl.textContent = '💡 ' + explanation;
       }
 
       // 显示下一题按钮
@@ -1257,6 +1336,11 @@
       var quizMainEl = document.getElementById('quizMain');
       if (quizMainEl) {
         quizMainEl.addEventListener('click', function (e) {
+          // 填空题提交按钮
+          if (e.target.id === 'btnSubmit') {
+            submitFillAnswer();
+            return;
+          }
           // 选项按钮
           var optionBtn = e.target.closest('.option-btn');
           if (optionBtn) {
@@ -1282,6 +1366,13 @@
 
         var quizPage = document.getElementById('quiz');
         if (!quizPage || !quizPage.classList.contains('active')) return;
+
+        // 填空题 Enter 提交
+        if (e.key === 'Enter' && state.questionType === 'fill' && !state.answered) {
+          e.preventDefault();
+          submitFillAnswer();
+          return;
+        }
 
         var key = e.key.toUpperCase();
 
