@@ -920,7 +920,7 @@
       document.head.appendChild(appleIcon);
     }
 
-    /* ====== 内联 PWA Manifest ====== */
+    /* ====== 内联 PWA Manifest（data URI，持久有效） ====== */
     function setupManifest() {
       const icon72 = generateAppIcon(72);
       const icon192 = generateAppIcon(192);
@@ -942,45 +942,21 @@
         ]
       };
 
-      const blob = new Blob([JSON.stringify(manifest)], { type: 'application/json' });
-      const manifestURL = URL.createObjectURL(blob);
+      var manifestJSON = JSON.stringify(manifest);
+      // 用 data URI 替代 Blob URL：Blob URL 随页面生命周期销毁，data URI 永久有效
+      var manifestURL = 'data:application/json;charset=utf-8,' + encodeURIComponent(manifestJSON);
 
-      const link = document.createElement('link');
+      var link = document.createElement('link');
       link.rel = 'manifest';
       link.href = manifestURL;
       document.head.appendChild(link);
     }
 
-    /* ====== 内联 Service Worker 注册 ====== */
-    function registerSW() {
-      if (!('serviceWorker' in navigator)) return;
-
-      const swCode = `
-        const CACHE = 'ds-quiz-v1';
-        self.addEventListener('install', e => {
-          self.skipWaiting();
-          e.waitUntil(caches.open(CACHE).then(c => c.addAll(['./'])));
-        });
-        self.addEventListener('activate', e => {
-          e.waitUntil(caches.keys().then(keys =>
-            Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k)))
-          ));
-          self.clients.claim();
-        });
-        self.addEventListener('fetch', e => {
-          e.respondWith(
-            caches.match(e.request).then(r => r || fetch(e.request).catch(() => r))
-          );
-        });
-      `;
-
-      const blob = new Blob([swCode], { type: 'application/javascript' });
-      const swURL = URL.createObjectURL(blob);
-
-      navigator.serviceWorker.register(swURL).catch(err => {
-        console.warn('SW registration failed (expected on HTTP localhost):', err.message);
-      });
-    }
+    /* ====== Service Worker ======
+     * 注意：单文件 HTML 无法注册持久的 Service Worker（Blob URL 的 SW 会在页面刷新后失效）。
+     * 浏览器的 HTTP 缓存已足够确保离线访问本文件。
+     * 如需完整离线缓存，请将此文件部署到支持自定义 Service Worker 路径的服务器。
+     */
 
     /* ====== 全局题目数据 ====== */
     let allQuestions = [];
@@ -1747,7 +1723,7 @@
       drawTreeIcon();
       setupIcons();
       setupManifest();
-      registerSW();
+      // SW 已移除：Blob URL 的 SW 在浏览器重开后会失效，反而可能导致 PWA 身份不稳定
 
       // ====== 开始按钮 ======
       var btnStart = document.getElementById('btnStart');
