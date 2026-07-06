@@ -74,6 +74,31 @@
       margin-bottom: 2rem;
     }
 
+    .subject-selector {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .sel-subject {
+      padding: 0.6rem 1.5rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      font-family: inherit;
+      background: var(--bg-card);
+      color: var(--text-primary);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: var(--radius);
+      cursor: pointer;
+      outline: none;
+      min-width: 240px;
+      text-align: center;
+      letter-spacing: 0.1em;
+      transition: border-color 0.15s;
+      appearance: auto;
+      -webkit-appearance: auto;
+    }
+    .sel-subject:focus { border-color: var(--accent-light); }
+
     .cover-stats {
       display: flex; justify-content: center; align-items: center;
       gap: 0; background: var(--bg-card);
@@ -325,6 +350,43 @@
     .option-btn:disabled:hover {
       background: var(--surface);
       border-color: rgba(255,255,255,0.08);
+    }
+
+    /* ====== 多选题样式 ====== */
+    .multi-select-btn {
+      cursor: pointer;
+    }
+    .multi-select-btn.selected {
+      border-color: var(--accent-light);
+      background: rgba(26,80,139,0.2);
+    }
+    .multi-select-btn.selected .option-letter {
+      background: var(--accent-light);
+    }
+    .multi-select-btn.correct {
+      border-color: var(--correct) !important;
+      background: rgba(0,184,148,0.12) !important;
+    }
+    .multi-select-btn.correct .option-letter {
+      background: var(--correct);
+    }
+    .multi-select-btn.incorrect {
+      border-color: var(--error) !important;
+      background: rgba(233,69,96,0.12) !important;
+    }
+    .multi-select-btn.incorrect .option-letter {
+      background: var(--error);
+    }
+    .multi-select-btn.disabled {
+      pointer-events: none;
+      opacity: 0.55;
+    }
+    .multi-select-btn.wrong {
+      border-color: var(--error) !important;
+      background: rgba(233,69,96,0.12) !important;
+    }
+    .multi-select-btn.wrong .option-letter {
+      background: var(--error);
     }
 
     /* ====== 填空题 ====== */
@@ -672,26 +734,32 @@
   <section id="cover" class="page active">
     <div class="cover-container">
       <canvas id="treeIcon" width="120" height="140"></canvas>
-      <h1 class="cover-title">数 据 结 构 刷 题</h1>
-      <p class="cover-subtitle">数据结构期末考试题库</p>
-      <div class="cover-stats">
+      <h1 class="cover-title" id="coverTitle">数 据 结 构 刷 题</h1>
+      <p class="cover-subtitle" id="coverSubtitle">数据结构期末考试题库</p>
+      <div class="subject-selector">
+        <select id="selSubject" class="sel sel-subject">
+          <option value="ds">数据结构</option>
+          <option value="marxism">马克思主义原理</option>
+        </select>
+      </div>
+      <div class="cover-stats" id="coverStats">
         <div class="stat-item">
-          <span class="stat-num">9</span>
+          <span class="stat-num" id="statChapters">9</span>
           <span class="stat-label">章节</span>
         </div>
         <div class="stat-divider"></div>
         <div class="stat-item">
-          <span class="stat-num">112</span>
-          <span class="stat-label">选择题</span>
+          <span class="stat-num" id="statSingle">112</span>
+          <span class="stat-label" id="statSingleLabel">选择题</span>
         </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item">
-          <span class="stat-num">78</span>
-          <span class="stat-label">判断题</span>
+        <div class="stat-divider" id="statDivider2"></div>
+        <div class="stat-item" id="statJudgeItem">
+          <span class="stat-num" id="statJudge">78</span>
+          <span class="stat-label" id="statJudgeLabel">判断题</span>
         </div>
-        <div class="stat-divider"></div>
+        <div class="stat-divider" id="statDivider3"></div>
         <div class="stat-item">
-          <span class="stat-num">190</span>
+          <span class="stat-num" id="statTotal">190</span>
           <span class="stat-label">总题数</span>
         </div>
       </div>
@@ -707,7 +775,7 @@
   <section id="quiz" class="page">
     <header class="toolbar" id="quizToolbar">
       <button id="btnBack" class="btn-icon" title="返回封面">&#x2190;</button>
-      <span class="toolbar-title">数据结构刷题</span>
+      <span class="toolbar-title" id="toolbarTitle">数据结构刷题</span>
       <div class="toolbar-controls">
         <select id="selChapter" class="sel">
           <option value="0">全部章节</option>
@@ -959,19 +1027,151 @@
      */
 
     /* ====== 全局题目数据 ====== */
-    let allQuestions = [];
-    let currentQuestions = [];
+    var allQuestions = [];
+    var allMarxismQuestions = [];
+    var currentQuestions = [];
+
+    /* ====== 获取当前科目的题目数据 ====== */
+    function getActiveQuestions() {
+      var selSubject = document.getElementById('selSubject');
+      var subject = selSubject ? selSubject.value : 'ds';
+      if (subject === 'marxism') {
+        return allMarxismQuestions;
+      }
+      return allQuestions;
+    }
+
+    /* ====== 获取当前科目 ====== */
+    function getCurrentSubject() {
+      var selSubject = document.getElementById('selSubject');
+      return selSubject ? selSubject.value : 'ds';
+    }
+
+    /* ====== 更新封面统计数据 ====== */
+    function updateCoverStats() {
+      var active = getActiveQuestions();
+      var chapters = {};
+      var singleCount = 0;
+      var judgeCount = 0;
+      var multiCount = 0;
+      for (var i = 0; i < active.length; i++) {
+        var q = active[i];
+        if (q.chapter !== undefined) chapters[q.chapter] = true;
+        if (q.type === 'single') singleCount++;
+        else if (q.type === 'judge') judgeCount++;
+        else if (q.type === 'multi') multiCount++;
+      }
+      var chapterCount = 0;
+      for (var ch in chapters) { if (chapters.hasOwnProperty(ch)) chapterCount++; }
+
+      var subject = getCurrentSubject();
+
+      // 更新封面文字
+      var coverTitle = document.getElementById('coverTitle');
+      var coverSubtitle = document.getElementById('coverSubtitle');
+      var toolbarTitle = document.getElementById('toolbarTitle');
+
+      if (subject === 'marxism') {
+        if (coverTitle) coverTitle.textContent = '马克思主义原理刷题';
+        if (coverSubtitle) coverSubtitle.textContent = '马克思主义原理期末考试题库';
+        if (toolbarTitle) toolbarTitle.textContent = '马克思主义原理刷题';
+      } else {
+        if (coverTitle) coverTitle.textContent = '数 据 结 构 刷 题';
+        if (coverSubtitle) coverSubtitle.textContent = '数据结构期末考试题库';
+        if (toolbarTitle) toolbarTitle.textContent = '数据结构刷题';
+      }
+
+      // 更新统计数字
+      var statChapters = document.getElementById('statChapters');
+      var statSingle = document.getElementById('statSingle');
+      var statSingleLabel = document.getElementById('statSingleLabel');
+      var statJudge = document.getElementById('statJudge');
+      var statJudgeLabel = document.getElementById('statJudgeLabel');
+      var statJudgeItem = document.getElementById('statJudgeItem');
+      var statDivider2 = document.getElementById('statDivider2');
+      var statDivider3 = document.getElementById('statDivider3');
+      var statTotal = document.getElementById('statTotal');
+
+      if (statChapters) statChapters.textContent = chapterCount;
+      if (statTotal) statTotal.textContent = active.length;
+
+      if (subject === 'marxism') {
+        if (statSingle) statSingle.textContent = singleCount;
+        if (statSingleLabel) statSingleLabel.textContent = '单选题';
+        if (statJudgeItem) statJudgeItem.style.display = '';
+        if (statJudge) statJudge.textContent = multiCount;
+        if (statJudgeLabel) statJudgeLabel.textContent = '多选题';
+        if (statDivider2) statDivider2.style.display = '';
+        if (statDivider3) statDivider3.style.display = '';
+      } else {
+        if (statSingle) statSingle.textContent = singleCount;
+        if (statSingleLabel) statSingleLabel.textContent = '选择题';
+        if (statJudgeItem) statJudgeItem.style.display = '';
+        if (statJudge) statJudge.textContent = judgeCount;
+        if (statJudgeLabel) statJudgeLabel.textContent = '判断题';
+        if (statDivider2) statDivider2.style.display = '';
+        if (statDivider3) statDivider3.style.display = '';
+      }
+    }
+
+    /* ====== 科目切换处理 ====== */
+    function onSubjectChange() {
+      updateCoverStats();
+      updateChapterSelect();
+      updateContinueButton();
+    }
+
+    /* ====== 更新章节下拉框 ====== */
+    function updateChapterSelect() {
+      var subject = getCurrentSubject();
+      var selChapter = document.getElementById('selChapter');
+      if (!selChapter) return;
+
+      var active = getActiveQuestions();
+      var chapters = {};
+      for (var i = 0; i < active.length; i++) {
+        var q = active[i];
+        if (q.chapter !== undefined && !chapters[q.chapter]) {
+          chapters[q.chapter] = q.chapterName || ('第' + q.chapter + '章');
+        }
+      }
+
+      var html = '<option value="0">全部章节</option>';
+      if (subject === 'marxism') {
+        html += '<option value="0">马克思主义原理</option>';
+      } else {
+        // DS chapters 1-9
+        var chapterNames = ['绪论', '线性表', '栈和队列', '串', '数组和广义表', '树和二叉树', '图', '查找', '排序'];
+        for (var ch = 1; ch <= 9; ch++) {
+          html += '<option value="' + ch + '">第' + ch + '章 ' + chapterNames[ch - 1] + '</option>';
+        }
+      }
+      selChapter.innerHTML = html;
+    }
 
     /* ====== 加载题目数据 ====== */
     (function loadQuestions() {
+      // 加载 DS 题库
       fetch('questions.json')
         .then(function (res) { return res.json(); })
         .then(function (data) {
           allQuestions = data;
-          console.log('[DS刷题] 已加载 ' + allQuestions.length + ' 道题目');
+          console.log('[DS刷题] 已加载 ' + allQuestions.length + ' 道题目 (数据结构)');
+          updateCoverStats();
         })
         .catch(function (err) {
           console.error('[DS刷题] 题目数据加载失败:', err);
+        });
+
+      // 加载马克思主义原理题库
+      fetch('marxism_questions.json')
+        .then(function (res) { return res.json(); })
+        .then(function (data) {
+          allMarxismQuestions = data;
+          console.log('[DS刷题] 已加载 ' + allMarxismQuestions.length + ' 道题目 (马克思主义原理)');
+        })
+        .catch(function (err) {
+          console.error('[DS刷题] 马克思主义原理题目数据加载失败:', err);
         });
     })();
 
@@ -1000,6 +1200,10 @@
 
       setTimeout(function () {
         fromPage.classList.remove('active');
+        if (toId === 'cover') {
+          updateCoverStats();
+          updateContinueButton();
+        }
       }, 400);
     }
 
@@ -1012,8 +1216,10 @@
       };
     }
 
-    /* ====== localStorage 存储键名 ====== */
-    var STORAGE_KEY = 'ds_quiz_data';
+    /* ====== localStorage 存储键名（按科目分离） ====== */
+    function getStorageKey() {
+      return 'ds_quiz_data_' + getCurrentSubject();
+    }
 
     /* ====== 保存配置（防抖） ====== */
     function saveConfig() {
@@ -1022,14 +1228,14 @@
         var data = loadProgress() || {};
         data.lastConfig = getConfig();
         data.lastUpdated = Date.now();
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+        localStorage.setItem(getStorageKey(), JSON.stringify(data));
       }, 500);
     }
 
     /* ====== 读取进度 ====== */
     function loadProgress() {
       try {
-        var raw = localStorage.getItem(STORAGE_KEY);
+        var raw = localStorage.getItem(getStorageKey());
         return raw ? JSON.parse(raw) : null;
       } catch (e) {
         return null;
@@ -1057,7 +1263,7 @@
       data.stats = existing;
       data.lastConfig = getConfig();
       data.lastUpdated = Date.now();
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+      localStorage.setItem(getStorageKey(), JSON.stringify(data));
     }
 
     /* ====== 更新继续上次按钮 ====== */
@@ -1090,7 +1296,7 @@
 
     /* ====== 按配置过滤题目 ====== */
     function filterQuestions(config) {
-      var filtered = allQuestions.slice();
+      var filtered = getActiveQuestions().slice();
 
       // 按章节过滤（0 表示全部）
       if (config.chapter !== 0) {
@@ -1128,6 +1334,7 @@
         answered: false,
         selectedAnswer: null,
         questionType: null,
+        multiSelected: [],
         results: [],
         wrongIds: []
       };
@@ -1217,6 +1424,44 @@
         return;
       }
 
+      // 多选题
+      if (q.type === 'multi') {
+        state.questionType = q.type;
+        state.answered = false;
+        state.selectedAnswer = [];
+        state.multiSelected = [];
+
+        var multiOptionsHtml = '';
+        for (var mi = 0; mi < q.options.length; mi++) {
+          var mletter = q.options[mi].charAt(0);
+          var mtext = q.options[mi].substring(2);
+          multiOptionsHtml +=
+            '<button class="option-btn multi-select-btn" data-letter="' + mletter + '">' +
+              '<span class="option-letter">' + mletter + '</span>' +
+              '<span class="option-text">' + mtext + '</span>' +
+            '</button>';
+        }
+
+        quizMain.innerHTML =
+          '<div class="question-card" id="questionCard">' +
+            '<div class="card-header">' +
+              '<span class="chapter-badge">' + (q.chapterName || '第' + q.chapter + '章') + '</span>' +
+              '<span class="question-number">' + current + ' / ' + total + '</span>' +
+              '<span class="type-badge">多选</span>' +
+              markHtml +
+            '</div>' +
+            '<div class="question-text">' + q.question + '</div>' +
+            '<div class="options-list" id="multiOptionsList">' + multiOptionsHtml + '</div>' +
+            '<div style="margin-top:0.75rem">' +
+              '<button class="btn-submit" id="btnMultiSubmit">确认答案</button>' +
+            '</div>' +
+            '<div id="cardFeedback"></div>' +
+            '<div id="cardActions"></div>' +
+          '</div>';
+        updateExamStatus();
+        return;
+      }
+
       // 单选题
       state.questionType = q.type;
       state.answered = false;
@@ -1257,6 +1502,100 @@
       void card.offsetWidth; // 强制回流，确保动画重播
       card.classList.add(isCorrect ? 'card-correct' : 'card-wrong');
       setTimeout(function () { card.classList.remove('card-correct', 'card-wrong'); }, 500);
+    }
+
+    /* ====== 多选题答案匹配 ====== */
+    function matchMultiAnswer(selectedLetters, multiAnswers) {
+      if (selectedLetters.length !== multiAnswers.length) return false;
+      for (var i = 0; i < selectedLetters.length; i++) {
+        if (multiAnswers.indexOf(selectedLetters[i]) === -1) return false;
+      }
+      return true;
+    }
+
+    /* ====== 多选题提交 ====== */
+    function submitMultiAnswer() {
+      var state = window.quizState;
+      if (!state || state.answered) return;
+
+      var selected = state.multiSelected || [];
+      if (selected.length === 0) return;
+
+      var q = state.questions[state.currentIndex];
+      var isCorrect = matchMultiAnswer(selected, q.multiAnswers);
+
+      state.answered = true;
+      state.selectedAnswer = selected.slice();
+
+      // 禁用所有按钮
+      var allBtns = document.querySelectorAll('#multiOptionsList .multi-select-btn');
+      for (var i = 0; i < allBtns.length; i++) {
+        allBtns[i].classList.add('disabled');
+      }
+      var btnSubmit = document.getElementById('btnMultiSubmit');
+      if (btnSubmit) btnSubmit.disabled = true;
+
+      // 记录结果
+      state.results.push({
+        id: q.id,
+        userAnswer: selected.slice(),
+        correctAnswer: q.answer,
+        correct: isCorrect
+      });
+
+      if (!isCorrect) {
+        state.wrongIds.push(q.id);
+      }
+
+      if (state.mode === 'exam') {
+        // 考试模式：只显示下一题
+        var actions = document.getElementById('cardActions');
+        if (actions) {
+          actions.innerHTML = '<button class="btn-next" id="btnNext">下一题 →</button>';
+        }
+      } else {
+        // 学习模式：高亮 + 反馈
+        for (var j = 0; j < allBtns.length; j++) {
+          var btn = allBtns[j];
+          var letter = btn.getAttribute('data-letter');
+          if (q.multiAnswers.indexOf(letter) !== -1) {
+            btn.classList.add('correct');
+          }
+          if (selected.indexOf(letter) !== -1 && q.multiAnswers.indexOf(letter) === -1) {
+            btn.classList.add('wrong');
+          }
+        }
+        triggerCardAnimation(isCorrect);
+        showMultiFeedback(isCorrect, selected, q.answer, q.explanation);
+      }
+
+      updateProgress();
+      updateExamProgress();
+    }
+
+    /* ====== 多选题学习模式反馈 ====== */
+    function showMultiFeedback(isCorrect, selected, correctAnswer, explanation) {
+      var feedback = document.getElementById('cardFeedback');
+      var actions = document.getElementById('cardActions');
+
+      var userDisplay = selected.sort().join('');
+      if (feedback) {
+        feedback.innerHTML =
+          '<div class="feedback-banner ' + (isCorrect ? 'feedback-correct' : 'feedback-wrong') + '">' +
+            '<span class="feedback-icon">' + (isCorrect ? '✅' : '❌') + '</span>' +
+            '<span class="feedback-text">' + (isCorrect ? '回答正确！' : '回答错误') + '</span>' +
+            (!isCorrect ? '<span class="feedback-answer">您的答案：' + userDisplay + ' 正确答案：' + correctAnswer + '</span>' : '') +
+          '</div>' +
+          (explanation ?
+            '<div class="explanation-box">' +
+              '<div class="explanation-header">📖 解析</div>' +
+              '<div class="explanation-content">' + explanation + '</div>' +
+            '</div>' : '');
+      }
+
+      if (actions) {
+        actions.innerHTML = '<button class="btn-next" id="btnNext">下一题 →</button>';
+      }
     }
 
     /* ====== 处理选项点击 ====== */
@@ -1495,16 +1834,21 @@
       if (!alreadySubmitted) {
         // 未提交的题目（如填空题）：记录为跳过/未答
         var isCorrect;
+        var userAns = state.selectedAnswer;
         if (q.type === 'fill') {
           isCorrect = false;
         } else if (q.type === 'judge') {
           isCorrect = ((state.selectedAnswer === 'A' ? '正确' : '错误') === q.answer);
+        } else if (q.type === 'multi') {
+          var selected = state.multiSelected || [];
+          isCorrect = matchMultiAnswer(selected, q.multiAnswers || []);
+          userAns = selected.slice();
         } else {
           isCorrect = (state.selectedAnswer === q.answer);
         }
         state.results.push({
           id: q.id,
-          userAnswer: state.selectedAnswer || null,
+          userAnswer: userAns || null,
           correctAnswer: q.answer,
           correct: isCorrect
         });
@@ -1512,6 +1856,9 @@
           state.wrongIds.push(q.id);
         }
       }
+
+      // 重置多选状态
+      state.multiSelected = [];
 
       if (state.currentIndex + 1 < state.questions.length) {
         state.currentIndex++;
@@ -1575,8 +1922,9 @@
       for (var i = 0; i < state.results.length; i++) {
         var r = state.results[i];
         var q = null;
-        for (var k = 0; k < allQuestions.length; k++) {
-          if (allQuestions[k].id === r.id) { q = allQuestions[k]; break; }
+        var active = getActiveQuestions();
+        for (var k = 0; k < active.length; k++) {
+          if (active[k].id === r.id) { q = active[k]; break; }
         }
         if (!q) continue;
         if (!byChapter[q.chapter]) byChapter[q.chapter] = { total: 0, correct: 0, name: q.chapterName };
@@ -1625,14 +1973,19 @@
       for (var j = 0; j < wrongResults.length; j++) {
         var r = wrongResults[j];
         var q = null;
-        for (var k = 0; k < allQuestions.length; k++) {
-          if (allQuestions[k].id === r.id) { q = allQuestions[k]; break; }
+        var active = getActiveQuestions();
+        for (var k = 0; k < active.length; k++) {
+          if (active[k].id === r.id) { q = active[k]; break; }
         }
         if (!q) continue;
         // 判断题：将 A/B 映射为可读文本
         var userDisplay = r.userAnswer || '未作答';
         if (q.type === 'judge' && r.userAnswer === 'A') userDisplay = 'A. 正确';
         if (q.type === 'judge' && r.userAnswer === 'B') userDisplay = 'B. 错误';
+        // 多选题：显示选中的字母组合
+        if (q.type === 'multi' && r.userAnswer && typeof r.userAnswer !== 'string') {
+          userDisplay = r.userAnswer.sort().join('');
+        }
         var correctDisplay = q.answer;
         items += '<div class="wrong-item">' +
           '<div class="question-text">' + q.question + '</div>' +
@@ -1839,11 +2192,26 @@
       }
 
       updateContinueButton();
+      updateCoverStats();
+      updateChapterSelect();
 
       // ====== 选择器变更事件 ======
       if (selChapter) selChapter.addEventListener('change', onConfigChange);
       if (selMode) selMode.addEventListener('change', onConfigChange);
       if (selCount) selCount.addEventListener('change', onConfigChange);
+
+      // ====== 科目选择器变更 ======
+      var selSubject = document.getElementById('selSubject');
+      if (selSubject) {
+        selSubject.addEventListener('change', function () {
+          onSubjectChange();
+          // 如果已经在答题页，重置并重新开始
+          var quizPage = document.getElementById('quiz');
+          if (quizPage && quizPage.classList.contains('active')) {
+            startQuiz();
+          }
+        });
+      }
 
       // ====== 答题区事件委托 ======
       var quizMainEl = document.getElementById('quizMain');
@@ -1854,16 +2222,39 @@
             submitFillAnswer();
             return;
           }
+          // 多选题确认按钮
+          if (e.target.id === 'btnMultiSubmit') {
+            submitMultiAnswer();
+            return;
+          }
           // 标记按钮
           if (e.target.id === 'btnMark' || e.target.closest('#btnMark')) {
             toggleMark();
             return;
           }
-          // 选项按钮
+          // 多选题选项按钮（toggle 选中）
+          var multiBtn = e.target.closest('.multi-select-btn');
+          if (multiBtn) {
+            var state = window.quizState;
+            if (state && !state.answered && state.questionType === 'multi') {
+              var letter = multiBtn.getAttribute('data-letter');
+              if (!state.multiSelected) state.multiSelected = [];
+              var idx = state.multiSelected.indexOf(letter);
+              if (idx === -1) {
+                state.multiSelected.push(letter);
+                multiBtn.classList.add('selected');
+              } else {
+                state.multiSelected.splice(idx, 1);
+                multiBtn.classList.remove('selected');
+              }
+            }
+            return;
+          }
+          // 单选题/判断题选项按钮
           var optionBtn = e.target.closest('.option-btn');
           if (optionBtn) {
-            var state = window.quizState;
-            if (state && !state.answered) {
+            var state2 = window.quizState;
+            if (state2 && !state2.answered) {
               handleChoice(optionBtn);
             }
             return;
@@ -1913,6 +2304,35 @@
 
         var key = e.key.toUpperCase();
 
+        // 多选题：A/B/C/D toggle 选项，Enter 提交
+        if (state.questionType === 'multi' && !state.answered) {
+          var multiLetterMap = { 'A': 'A', 'B': 'B', 'C': 'C', 'D': 'D', '1': 'A', '2': 'B', '3': 'C', '4': 'D' };
+          var multiMapped = multiLetterMap[key];
+          if (multiMapped) {
+            var multiBtn = document.querySelector('.multi-select-btn[data-letter="' + multiMapped + '"]');
+            if (multiBtn) {
+              e.preventDefault();
+              var mletter = multiBtn.getAttribute('data-letter');
+              if (!state.multiSelected) state.multiSelected = [];
+              var midx = state.multiSelected.indexOf(mletter);
+              if (midx === -1) {
+                state.multiSelected.push(mletter);
+                multiBtn.classList.add('selected');
+              } else {
+                state.multiSelected.splice(midx, 1);
+                multiBtn.classList.remove('selected');
+              }
+            }
+            return;
+          }
+          if (key === 'ENTER') {
+            e.preventDefault();
+            submitMultiAnswer();
+            return;
+          }
+          return;
+        }
+
         // 未作答：A/B/C/D 或 1-4 选择选项
         if (!state.answered) {
           var letterMap = { 'A': 'A', 'B': 'B', 'C': 'C', 'D': 'D', '1': 'A', '2': 'B', '3': 'C', '4': 'D' };
@@ -1948,9 +2368,10 @@
             return;
           }
           var pool = [];
-          for (var j = 0; j < allQuestions.length; j++) {
-            if (wrongIds.indexOf(allQuestions[j].id) !== -1) {
-              pool.push(allQuestions[j]);
+          var active = getActiveQuestions();
+          for (var j = 0; j < active.length; j++) {
+            if (wrongIds.indexOf(active[j].id) !== -1) {
+              pool.push(active[j]);
             }
           }
           if (pool.length === 0) {
@@ -1965,6 +2386,7 @@
             answered: false,
             selectedAnswer: null,
             questionType: null,
+            multiSelected: [],
             results: [],
             wrongIds: []
           };
