@@ -1,0 +1,3687 @@
+[
+  {
+    "id": 1,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "人们先设计图纸，然后根据图纸施工建成大楼，这说明",
+    "options": [
+      "A. 意识决定物质",
+      "B. 意识创造物质",
+      "C. 意识对物质有能动作用",
+      "D. 意识依赖于物质"
+    ],
+    "answer": "C",
+    "multiAnswers": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 2,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "“沉舟侧畔千帆过，病树前头万木春”；“芳林新叶催陈叶，流水前波让后波”。诗句含的哲学道理是",
+    "options": [
+      "A. 矛盾是事物发展的动力",
+      "B. 事物是本质和现象的统一",
+      "C. 事物的发展是量变和质量的统一",
+      "D. 新事物代替旧事物是事物发展的总趋势"
+    ],
+    "answer": "D",
+    "multiAnswers": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 3,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "列宁对辩证唯物主义物质范畴的定义是通过",
+    "options": [
+      "A. 物质与意识的关系界定的",
+      "B. 个别与一般的关系界定的",
+      "C. 哲学与具体科学的关系界定的",
+      "D. 认识与实践的关系界定的"
+    ],
+    "answer": "A",
+    "multiAnswers": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 4,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "中国古代哲学家荀子说：“心不使焉，则白黑在前而目不见，雷鼓在侧而耳不闻。”这段话表明人的意识具有",
+    "options": [
+      "A. 客观性",
+      "B. 能动性",
+      "C. 对象性",
+      "D. 任意性"
+    ],
+    "answer": "B",
+    "multiAnswers": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 5,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "我国哲学家范缜说：“形存则神存，形谢则神灭。”这是",
+    "options": [
+      "A. 客观唯心主义观点",
+      "B. 形而上学的观点",
+      "C. 唯物主义观点",
+      "D. 主观唯心主义观点"
+    ],
+    "answer": "C",
+    "multiAnswers": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 6,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "“动中有静，静中有动”说的是",
+    "options": [
+      "A. 形而上学和诡辩论的统一",
+      "B. 绝对运动和相对静止的统一",
+      "C. 物质和运动的统一",
+      "D. 连续性和非连续性的统一"
+    ],
+    "answer": "B",
+    "multiAnswers": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 7,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "世界上本没有鬼，可是人们能画出牛头马面人身等各种各样的鬼的图形来，这仍然表明",
+    "options": [
+      "A. 意识的内容来自人脑",
+      "B. 意识的内容来自主观能动性",
+      "C. 意识的内容来自人的思维活动",
+      "D. 意识的内容来自外部世界"
+    ],
+    "answer": "D",
+    "multiAnswers": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 8,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "在马克思主义普遍原理指导下，从中国的基本国情出发，走建设有中国特色的社会主义道路。这体现了",
+    "options": [
+      "A. 矛盾的同一性和斗争性的统一",
+      "B. 矛盾的普遍性和特殊性的统一",
+      "C. 事物发展的量变和质变的统一",
+      "D. 事物发展的前进性和曲折性的统一"
+    ],
+    "answer": "B",
+    "multiAnswers": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 9,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "20世纪50年代，北大荒一片荒凉。由于人口剧增，生产力水平低下，吃饭问题成为中国面临的首要问题，于是人们不得不靠扩大耕地面积增加粮食产量，经过半个世纪的开垦，北大荒成了全国闻名的“北大仓”。然而由于过度开垦已经造成了许多生态问题。现在，黑龙江垦区全面停止开荒，退耕还“荒”。这说明",
+    "options": [
+      "A. 人与自然的和谐最终以恢复原始生态为归宿",
+      "B. 人们改造自然的一切行为都会遭到“自然界的报复”",
+      "C. 人们应合理地调节人与自然之间的物质变换",
+      "D. 人在自然界面前总是处于被支配的地位"
+    ],
+    "answer": "C",
+    "multiAnswers": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 10,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "“东北二人转”是一种非物质文化遗产。新中国成立后，艺术家们对“二人转”曲牌在内容上取其精华、去其糟粕，继承健康、幽默、风趣的优良传统，在形式上不断出新，伴奏乐器增加了扬琴、琵琶等，并兼用武场鼓、锣、钹综合艺术质量不断提高。这说明发展",
+    "options": [
+      "A. 是物质运动的一种方式和属性",
+      "B. 是对旧事物的辩证否定",
+      "C. 是新出现的事物取代旧事物的过程",
+      "D. 是事物状态乃至性质的改变"
+    ],
+    "answer": "B",
+    "multiAnswers": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 11,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "近年来，减轻中小学生负担过重的话题，一直受到社会各界的重视。目前学生负担过重表现在：一是课程门类偏多，内容偏难；二是书本太多；三是作业多、补习多、办班多。这些都给中小学生的身心健康、智力发展造成严重损害。从辩证法角度看，造成中小学生负担过重的原因是",
+    "options": [
+      "A. 忽视了量的积累",
+      "B. 违背了适度原则",
+      "C. 曲解了肯定与否定辩证关系",
+      "D. 否认了物质的决定作用"
+    ],
+    "answer": "B",
+    "multiAnswers": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 12,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "毛泽东“坐地日行八万里，巡天遥看一千河”诗句包含的哲学道理",
+    "options": [
+      "A. 物质运动的客观性和时间空间的主观性的统一",
+      "B. 物质运动绝对性和静止的相对性的统一",
+      "C. 物质运动的无限性和时间空间的有限性的统一",
+      "D. 物质运动的多样性和静止的单一性的统一"
+    ],
+    "answer": "B",
+    "multiAnswers": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 13,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "下列选项中，强调外部条件在事物发展中起重要作用的是",
+    "options": [
+      "A. 常在河边走，就是不湿鞋",
+      "B. 威武不能屈，贫贱不能移",
+      "C. 近朱者赤，近墨者黑",
+      "D. 对症下药，量体裁衣"
+    ],
+    "answer": "C",
+    "multiAnswers": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 14,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "六七十年代，山西省昔阳县大寨村遵循“以粮为纲”的思想，单纯追求粮食产量，在山坡上修建梯田，导致水土流失严重。近年来，大寨提出以林养土，以木蓄水，改善生态环境的思想，将坡度在30度以上的坡地全部退耕还林，使原来的荒山变了样，既增加了经济效益，又改善了生态环境。这一事实蕴含的哲理是",
+    "options": [
+      "A. 意识是人脑对客观事物的反映",
+      "B. 社会意识对社会存在有积极和消极作用",
+      "C. 物质是第一性的，意识是第二性的",
+      "D. 世界是客观存在的物质世界"
+    ],
+    "answer": "B",
+    "multiAnswers": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 15,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "雪莱的名言“冬天来了，春天还会远吗？”体现了",
+    "options": [
+      "A. 普遍联系的观点",
+      "B. 质量互变规律",
+      "C. 前进性和曲折性相统一的观点",
+      "D. 对立统一规律"
+    ],
+    "answer": "C",
+    "multiAnswers": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 16,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "中国古代佛教理论家惠能认为，“不是幡动，不是风动，仁者心动。”这是",
+    "options": [
+      "A. 客观唯心主义",
+      "B. 主观唯心主义",
+      "C. 形而上学观点",
+      "D. 辩证法观点"
+    ],
+    "answer": "B",
+    "multiAnswers": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 17,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "杜甫诗曰：“挽弓当挽强，用箭当用长，射人先射马，擒贼先擒王。”这首诗蕴含的哲理是",
+    "options": [
+      "A. 看问题要分清主流和支流",
+      "B. 承认矛盾客观性，正确对待矛盾",
+      "C. 既要看到矛盾主要方面，又要看到矛盾次要方面",
+      "D. 抓主要矛盾，抓中心，抓关键"
+    ],
+    "answer": "D",
+    "multiAnswers": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 18,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "俗话说：“有心栽花花不开，无心插柳柳成荫”。这一说法的哲学寓意是",
+    "options": [
+      "A. 人在客观事物面前是无能为力的",
+      "B. 事物的变化发展不以人的意志为转移",
+      "C. 只有解放思想才能真正做到实事求是",
+      "D. 意识对物质有能动的反作用"
+    ],
+    "answer": "B",
+    "multiAnswers": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 19,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "否定之否定规律在",
+    "options": [
+      "A. 事物经过一次否定后表现出来",
+      "B. 事物发展的任何阶段上都表现出来",
+      "C. 事物经过量变向质变转变后表现出来",
+      "D. 事物完成一个发展周期才能完整表现出来"
+    ],
+    "answer": "D",
+    "multiAnswers": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 20,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "恩格斯说：“鹰比人看得远得多，但是人的眼睛识别的东西远胜于鹰。狗比人具有敏锐得多的嗅觉，但是它连被人当作为各种物的特定标志的不同气味的百分之一也辨别不出来。”人感官的识别能力高于动物，除了人脑及感官发育得更完美外，还因为",
+    "options": [
+      "A. 人不仅有感觉还有思维",
+      "B. 人不仅有理性还有非理性",
+      "C. 人不仅有直觉还有想象",
+      "D. 人不仅有生理机能还有心理活动"
+    ],
+    "answer": "A",
+    "multiAnswers": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 21,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "同一棵大树，在木匠的眼中是木材，画家看到的是色彩和色调，植物学家看到的是它的形态特征，这是由于:",
+    "options": [
+      "A. 人的感觉受理性指导",
+      "B. 人的认识具有能动性",
+      "C. 理性认识是感性认识的基础",
+      "D. 已有的认识影响感觉活动"
+    ],
+    "answer": "ABD",
+    "multiAnswers": [
+      "A",
+      "B",
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 22,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "感性认识向理性认识的飞跃不是任意的，也不是消极自发的，要实现飞跃必须具备一定的条件",
+    "options": [
+      "A. 在实践中获取十分丰富和合乎实际的感性材料",
+      "B. 把关于客观事物的认识同主体自身的需要结合起来",
+      "C. 要得到人民群众的积极参与和大力支持",
+      "D. 要运用理论思维和科学的思维方法处理加工"
+    ],
+    "answer": "AD",
+    "multiAnswers": [
+      "A",
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 23,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "辩证唯物主义认识论认为",
+    "options": [
+      "A. 认识是思维对存在的无止境接近",
+      "B. 世界是可以认识的",
+      "C. 认识是曲折反复的过程",
+      "D. 认识是对客观世界的反映，基础是实践"
+    ],
+    "answer": "ABCD",
+    "multiAnswers": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 24,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "主体与客体相互作用的过程包括以下环节",
+    "options": [
+      "A. 确定实践目的和实践方案",
+      "B. 通过一定的实践手段把实践方案变成实际的实践活动",
+      "C. 通过反馈和调节，使实践目的、手段和结果按一定方向运行",
+      "D. 通过改造主观世界而支配客观世界的运行"
+    ],
+    "answer": "ABC",
+    "multiAnswers": [
+      "A",
+      "B",
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 25,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "下列选项中，属于认识的客体的有",
+    "options": [
+      "A. 人认识到的自然界",
+      "B. 人尚未观察到的星球",
+      "C. 社会现实中的事件",
+      "D. 人们读书的书籍"
+    ],
+    "answer": "ACD",
+    "multiAnswers": [
+      "A",
+      "C",
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 26,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "马克思主义认识论与唯心主义认识论的区别在于是否承认",
+    "options": [
+      "A. 社会实践是认识的基础",
+      "B. 认识发展的辩证过程",
+      "C. 客观事物是认识的对象",
+      "D. 世界的可知性"
+    ],
+    "answer": "AC",
+    "multiAnswers": [
+      "A",
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 27,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "人们在剧场欣赏某一悲剧，有人听之入神，有人听之乏味，有人为之悲泣，有人不为所动。这种意识反映的不同是由于人们的",
+    "options": [
+      "A. 文化素质和艺术的欣赏能力不同",
+      "B. 生活经历不同",
+      "C. 当时的主观精神状态不同",
+      "D. 阶级地位不同，因而情感不同"
+    ],
+    "answer": "ABCD",
+    "multiAnswers": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 28,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "唯物主义反映论认为",
+    "options": [
+      "A. 没有反映者就没有反映",
+      "B. 反映者能够与被反映者相一致",
+      "C. 没有反映者就没有被反映者的客观存在",
+      "D. 反映者和被反映者是绝对统一的"
+    ],
+    "answer": "AB",
+    "multiAnswers": [
+      "A",
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 29,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "下列表述中，符合马克思主义实践观的有",
+    "options": [
+      "A. 实践是人的自觉能动性活动",
+      "B. 实践是人的感性物质活动",
+      "C. 实践是人的社会历史性的活动",
+      "D. 实践是人的精神性活动"
+    ],
+    "answer": "ABC",
+    "multiAnswers": [
+      "A",
+      "B",
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 30,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "实践在认识中的决定作用表现在",
+    "options": [
+      "A. 实践是认识的来源",
+      "B. 实践创造出必要的物质条件和手段，使认识成为可能",
+      "C. 实践提出了认识的课题",
+      "D. 实践是检验认识真理性的唯一标准"
+    ],
+    "answer": "ABCD",
+    "multiAnswers": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 31,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "毛泽东指出：“实践、认识、再实践、再认识，循环往复以至无穷，而实践和认识之每一循环的内容，都比较地进到了高一级的程度。”这段话说明",
+    "options": [
+      "A. 人们在实践中对真理的认识永远没有完结",
+      "B. 认识过程不是封闭式循环，也不是直线式发展",
+      "C. 认识过程是沿着科学性方向不断深化发展的过程",
+      "D. 认识过程是反复循环和无限发展的过程"
+    ],
+    "answer": "ABCD",
+    "multiAnswers": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 32,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "习近平指出：“马克思主义就是我们共产党人的真经，真经没念好，总想着西天取经，就要贻误大事！不了解、不熟悉马克思主义基本原理，就不可能真正了解和掌握中国特色社会主义理论体系。”这段话说明",
+    "options": [
+      "A. 马克思主义经典作家没有穷尽真理",
+      "B. 在实践中必须以马克思主义为指导",
+      "C. 马克思主义是绝对性和相对性的统一",
+      "D. 在实践中必须丰富和发展马克思主义"
+    ],
+    "answer": "ABCD",
+    "multiAnswers": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 33,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "“只要再多走一小步，仿佛是向同一方向迈的一小步，真理就会变成错误。”这一论断说明",
+    "options": [
+      "A. 真理和谬误没有确定的界限",
+      "B. 真理和谬误在一定条件下可以转化",
+      "C. 沿着真理的方向继续前进会使真理变成谬误",
+      "D. 真理和谬误的对立只有在非常有限的领域内才有绝对意义"
+    ],
+    "answer": "BD",
+    "multiAnswers": [
+      "B",
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 34,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "十月革命胜利后列宁指出：对俄国来说，根据书本争论社会主义纲领的时代已经过去了，我深信已经一去不复返了。今天只能根据经验来谈社会主义。对这句话的正确理解是",
+    "options": [
+      "A. 社会主义建设不需要任何纲领",
+      "B. 应该在实践中不断丰富发展社会主义理论",
+      "C. 对社会主义的认识应该由经验代替理论",
+      "D. 必须由实践来检验社会主义理论"
+    ],
+    "answer": "BD",
+    "multiAnswers": [
+      "B",
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 35,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "下列观点中包含实践对认识的决定作用原理的是",
+    "options": [
+      "A. 没有调查就没有发言权",
+      "B. 百闻不如一见，百见不如一干",
+      "C. 机遇偏爱有准备的头脑",
+      "D. 不登高山，不知天之高也"
+    ],
+    "answer": "ABD",
+    "multiAnswers": [
+      "A",
+      "B",
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 36,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "马克思主义哲学认识论和一切旧哲学认识论的根本区别是",
+    "options": [
+      "A. 坚持反映论",
+      "B. 把辩证法贯彻于认识论之中",
+      "C. 在认识论中贯彻唯物主义观点",
+      "D. 把科学实践观作为认识论的基础"
+    ],
+    "answer": "D",
+    "multiAnswers": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 37,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "马克思主义认识论认为，认识的本质是",
+    "options": [
+      "A. 主观见之于客观的活动",
+      "B. 主体对客体的直观反映",
+      "C. 人们对客观事物及其本质的正确反映",
+      "D. 在实践基础上主体对客体能动的反映"
+    ],
+    "answer": "D",
+    "multiAnswers": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 38,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "“人的认识是主体对客体的直观反映。”这种观点属于",
+    "options": [
+      "A. 辩证唯物主义认识论",
+      "B. 客观唯心主义认识论",
+      "C. 主观唯心主义认识论",
+      "D. 形而上学唯物主义认识论"
+    ],
+    "answer": "D",
+    "multiAnswers": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 39,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "诗人陆游说：“纸上得来终觉浅，绝知此事要躬行。”这里是强调",
+    "options": [
+      "A. 读书不能获得真知",
+      "B. 实践是认识发展的动力",
+      "C. 实践是认识的来源",
+      "D. 实践是认识的目的"
+    ],
+    "answer": "C",
+    "multiAnswers": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 40,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "感性认识和理性认识的根本区别在于",
+    "options": [
+      "A. 感性认识包含错误，理性认识则完全正确",
+      "B. 感性认识产生于现实生活，理性认识则产生于科学实践",
+      "C. 感性认识来源于社会实践、理性认识则来源于抽象思维",
+      "D. 感性认识反映事物的现象，理性认识则反映事物的本质"
+    ],
+    "answer": "D",
+    "multiAnswers": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 41,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "一个完整的认识过程需要经过两次飞跃。下列选项中属于第二次飞跃的是",
+    "options": [
+      "A. 调查研究，了解情况",
+      "B. 深入思考，形成理论",
+      "C. 精心安排，制定计划",
+      "D. 执行计划，付诸实践"
+    ],
+    "answer": "D",
+    "multiAnswers": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 42,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "坚持实践是检验真理的唯一标准，就是坚持了检验真理的标准的",
+    "options": [
+      "A. 确定性",
+      "B. 全面性",
+      "C. 具体性",
+      "D. 稳定性"
+    ],
+    "answer": "A",
+    "multiAnswers": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 43,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "马克思指出，哲学家们只是用不同的方式解释世界，而问题在于改变世界的著作是",
+    "options": [
+      "A. 《自然辩证法》",
+      "B. 《德意志意识形态》",
+      "C. 《关于费尔巴哈的提纲》",
+      "D. 《共产党宣言》"
+    ],
+    "answer": "C",
+    "multiAnswers": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 44,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "马克思主义认为，实践是",
+    "options": [
+      "A. 主体创造客体的活动",
+      "B. 作为主体的人的日常活动",
+      "C. 主体适应客观环境的活动",
+      "D. 主客体之间相互作用的过程"
+    ],
+    "answer": "D",
+    "multiAnswers": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 45,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "“社会一旦有技术上的需要，这种需要就会比十所大学更能把科学推向前进。”恩格斯的这段话是指",
+    "options": [
+      "A. 实践是认识的发展动力",
+      "B. 实践为认识提供了可能",
+      "C. 实践使认识得以产生和发展",
+      "D. 实践是检验认识真理性的唯一标准"
+    ],
+    "answer": "A",
+    "multiAnswers": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 46,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "马克思说：“人的思维是否具有客观的真理性，这不是一个理论问题，而是一个实践问题。人应该在实践中证明自己思维的真理性，即自己思维的现实性和力量，自己思维的此岸性。”这段话的意思是",
+    "options": [
+      "A. 实践产生了认识的需要",
+      "B. 实践为认识提供了可能",
+      "C. 实践使认识得以产生和发展",
+      "D. 实践是检验认识真理性的唯一标准"
+    ],
+    "answer": "D",
+    "multiAnswers": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 47,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "习近平指出：“我们党现阶段提出和实施的理论和路线方针政策，之所以正确，就是因为它们都是以我国现时代的社会存在为基础的。”这段话说明",
+    "options": [
+      "A. 实践是认识的来源",
+      "B. 实践是认识发展的动力",
+      "C. 实践是认识的目的",
+      "D. 实践是检验认识真理性的唯一标准"
+    ],
+    "answer": "A",
+    "multiAnswers": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 48,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "在认识的本质上，存在的两条根本对立的认识路线是",
+    "options": [
+      "A. 唯物辩证法和形而上学的对立",
+      "B. 可知论和不可知论的对立",
+      "C. 唯物主义和唯心主义的对立",
+      "D. 能动反映论和直观反映论的对立"
+    ],
+    "answer": "C",
+    "multiAnswers": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 49,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "“从物到感觉和思想”是关于认识本质问题上的",
+    "options": [
+      "A. 唯物主义反映论的认识路线",
+      "B. 形而上学直观反映论的认识路线",
+      "C. 唯心主义先验论的认识路线",
+      "D. 唯心主义经验论的认识路线"
+    ],
+    "answer": "A",
+    "multiAnswers": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 50,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "生产实践的巨大发展，“不但提供了大量可供观察的材料，而且自身也提供了和以往完全不同的实验手段，并使新的工具的设计成为可能。可以说，真正有系统的实验科学这时才成为可能。”这段论述表明",
+    "options": [
+      "A. 实践为认识提供了可能",
+      "B. 实践产生了认识的需要",
+      "C. 实践使认识得以产生和发展",
+      "D. 实践是检验真理的标准"
+    ],
+    "answer": "A",
+    "multiAnswers": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 51,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "马克思主义认识论与唯心主义认识论的区别在于是否承认",
+    "options": [
+      "A. 社会实践是认识的基础",
+      "B. 认识发展的辩证过程",
+      "C. 客观事物是认识的对象",
+      "D. 世界的可知性"
+    ],
+    "answer": "AC",
+    "multiAnswers": [
+      "A",
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 52,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "下列表述中，符合马克思主义实践观的有",
+    "options": [
+      "A. 实践是人的自觉能动性活动",
+      "B. 实践是人的感性物质活动",
+      "C. 实践是人的社会历史性的活动",
+      "D. 实践是人的精神性活动"
+    ],
+    "answer": "ABC",
+    "multiAnswers": [
+      "A",
+      "B",
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 53,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "实践在认识中的决定作用表现在",
+    "options": [
+      "A. 实践是认识的来源",
+      "B. 实践创造出必要的物质条件和手段，使认识成为可能",
+      "C. 实践提出了认识的课题",
+      "D. 实践是检验认识真理性的唯一标准"
+    ],
+    "answer": "ABCD",
+    "multiAnswers": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 54,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "毛泽东指出：“实践、认识、再实践、再认识，循环往复以至无穷，而实践和认识之每一循环的内容，都比较地进到了高一级的程度。”这段话说明",
+    "options": [
+      "A. 人们在实践中对真理的认识永远没有完结",
+      "B. 认识过程不是封闭式循环，也不是直线式发展",
+      "C. 认识过程是沿着科学性方向不断深化发展的过程",
+      "D. 认识过程是反复循环和无限发展的过程"
+    ],
+    "answer": "ABCD",
+    "multiAnswers": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 55,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "习近平指出：“马克思主义就是我们共产党人的真经，真经没念好，总想着西天取经，就要贻误大事！不了解、不熟悉马克思主义基本原理，就不可能真正了解和掌握中国特色社会主义理论体系。”这段话说明",
+    "options": [
+      "A. 马克思主义经典作家没有穷尽真理",
+      "B. 在实践中必须以马克思主义为指导",
+      "C. 马克思主义是绝对性和相对性的统一",
+      "D. 在实践中必须丰富和发展马克思主义"
+    ],
+    "answer": "ABCD",
+    "multiAnswers": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 56,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "真理的相对性是指",
+    "options": [
+      "A. 真理中都包含着错误成分，需要修正",
+      "B. 真理是对事物某些方面的正确反映，需要扩展",
+      "C. 真理是相对谬误而存在的",
+      "D. 真理是对事物一定程度近似正确的反映，需要深化"
+    ],
+    "answer": "BD",
+    "multiAnswers": [
+      "B",
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 57,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "理性认识向实践飞跃的意义在于",
+    "options": [
+      "A. 理论接受实践的考验",
+      "B. 理论可以改变事物发展的总趋势",
+      "C. 理论可以指导实践",
+      "D. 理论和实践不可相提并论"
+    ],
+    "answer": "AC",
+    "multiAnswers": [
+      "A",
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 58,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "感性认识向理性认识的飞跃不是任意的，也不是消极自发的，要实现飞跃必须具备一定的条件",
+    "options": [
+      "A. 在实践中获取十分丰富和合乎实际的感性材料",
+      "B. 把关于客观事物的认识同主体自身的需要结合起来",
+      "C. 要得到人民群众的积极参与和大力支持",
+      "D. 要运用理论思维和科学的思维方法处理加工"
+    ],
+    "answer": "AD",
+    "multiAnswers": [
+      "A",
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 59,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "同一棵大树，在木匠的眼中是木材，画家看到的是色彩和色调，植物学家看到的是它的形态特征，这是由于:",
+    "options": [
+      "A. 人的感觉受理性指导",
+      "B. 人的认识具有能动性",
+      "C. 理性认识是感性认识的基础",
+      "D. 已有的认识影响感觉活动"
+    ],
+    "answer": "ABD",
+    "multiAnswers": [
+      "A",
+      "B",
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 60,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "主体与客体相互作用的过程包括以下环节",
+    "options": [
+      "A. 确定实践目的和实践方案",
+      "B. 通过一定的实践手段把实践方案变成实际的实践活动",
+      "C. 通过反馈和调节，使实践目的、手段和结果按一定方向运行",
+      "D. 通过改造主观世界而支配客观世界的运行"
+    ],
+    "answer": "ABC",
+    "multiAnswers": [
+      "A",
+      "B",
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 61,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "社会历史观的基本问题",
+    "options": [
+      "A. 生产力和生产关系的问题",
+      "B. 社会规律和主观意识的关系问题",
+      "C. 社会存在和社会意识的关系问题",
+      "D. 自然和社会的关系问题"
+    ],
+    "answer": "C",
+    "multiAnswers": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 62,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "在人类社会发展中起决定作用的因素是",
+    "options": [
+      "A. 生产方式",
+      "B. 地理条件",
+      "C. 先进的社会意识",
+      "D. 人口因素"
+    ],
+    "answer": "A",
+    "multiAnswers": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 63,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "人口因素在社会发展中的作用是",
+    "options": [
+      "A. 决定社会制度的性质",
+      "B. 决定社会制度的更替",
+      "C. 制约和影响社会发展",
+      "D. 决定国家的贫富强弱"
+    ],
+    "answer": "C",
+    "multiAnswers": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 64,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "人类社会存在和发展的物质基础是",
+    "options": [
+      "A. 社会生产",
+      "B. 自然环境的物质基础",
+      "C. 从事物质生产活动的人",
+      "D. 物质资料的生产方式"
+    ],
+    "answer": "D",
+    "multiAnswers": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 65,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "一切社会意识所共有的本质特征在于",
+    "options": [
+      "A. 它们具有阶级性",
+      "B. 它们是对社会存在的反映",
+      "C. 它们是上层建筑的组成部分",
+      "D. 平等地为一切经济基础服务"
+    ],
+    "answer": "B",
+    "multiAnswers": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 66,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "社会意识相对独立性的最突出表现在",
+    "options": [
+      "A. 与社会存在发展的不平衡性",
+      "B. 具有历史的继承性",
+      "C. 对社会存在具有能动的反作用",
+      "D. 社会意识各形式之间相互影响"
+    ],
+    "answer": "C",
+    "multiAnswers": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 67,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "列宁说：“意识到自己的奴隶地位而与之作斗争，是革命家。没有意识到自己的奴隶地位而过着默默无言、浑浑噩噩、忍气吞声的奴隶生活的奴隶，是十足的奴隶。对奴隶生活的各种好处津津乐道并对和善的好主人感激不尽以至垂涎欲滴的奴隶是奴才，无耻之徒。”这三种奴隶的思想意识之所以有如此巨大的差异，是由于",
+    "options": [
+      "A. 社会意识并不都是社会存在的反映",
+      "B. 社会意识与社会存在的发展有不平衡性",
+      "C. 社会意识各形式间相互影响及各自具有历史继承性",
+      "D. 社会意识对社会存在具有能动的反作用"
+    ],
+    "answer": "B",
+    "multiAnswers": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 68,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "人类全部社会关系中最基础的关系是",
+    "options": [
+      "A. 生产关系",
+      "B. 血缘关系",
+      "C. 政治关系",
+      "D. 思想关系"
+    ],
+    "answer": "A",
+    "multiAnswers": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 69,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "在生产关系中起决定作用的是",
+    "options": [
+      "A. 生产资料所有制",
+      "B. 产品的分配和交换",
+      "C. 在生产中人与人的关系",
+      "D. 管理者和生产者的不同地位"
+    ],
+    "answer": "A",
+    "multiAnswers": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 70,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "生产力发展的社会条件中，最基本最重要的是",
+    "options": [
+      "A. 政治法律制度",
+      "B. 生产关系",
+      "C. 历史文化传统",
+      "D. 伦理道德规范"
+    ],
+    "answer": "B",
+    "multiAnswers": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 71,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "社会运动的物质承担者是",
+    "options": [
+      "A. 从事物质资料生产的劳动者",
+      "B. 经济上占统治地位的阶级",
+      "C. 物质资料的生产方式",
+      "D. 各革命阶级的联合体"
+    ],
+    "answer": "C",
+    "multiAnswers": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 72,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "下列属于非意识形态的是",
+    "options": [
+      "A. 道德",
+      "B. 哲学",
+      "C. 逻辑",
+      "D. 艺术"
+    ],
+    "answer": "C",
+    "multiAnswers": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 73,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "社会意识相对独立性最突出的表现是",
+    "options": [
+      "A. 社会意识对社会存在的能动的反作用",
+      "B. 社会意识发展同社会经济发展水平不平衡",
+      "C. 社会意识是属于社会生活的精神方面",
+      "D. 社会意识诸形式之间的相互作用"
+    ],
+    "answer": "A",
+    "multiAnswers": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 74,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "下列各项，哪一个不属于政治上层建筑",
+    "options": [
+      "A. 政治法律思想",
+      "B. 政党",
+      "C. 国家政权机构",
+      "D. 法庭"
+    ],
+    "answer": "A",
+    "multiAnswers": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 75,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "劳动资料作为物的要素，是“死的劳动”。“自然界没有制造出任何机器，没有制造出机车、铁路、电报、走锭精纺机等等。它们是人类劳动的产物，是变成了人类意志驾驭自然的器官或人类在自然界活动的器官的自然物质。它们是人类的手创造出来的人类头脑的器官；是物化的知识力量。”这些话是要说明",
+    "options": [
+      "A. 科学技术是生产力的第一要素",
+      "B. 劳动资料是不重要的",
+      "C. 劳动者是生产力的第一要素",
+      "D. 人工自然（如铁路）是人意志的产物"
+    ],
+    "answer": "C",
+    "multiAnswers": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 76,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "唯心史观的局限性表现在",
+    "options": [
+      "A. 至多是考察了人们历史活动的思想动机，没有看到精神因素背后起决定作用的物质因素及其规律的作用",
+      "B. 至多是考察了杰出人物、领袖人物或其他重要历史人物在历史变迁中的作用，而没能客观地说明人民群众创造历史的活动及其意义",
+      "C. 看到了科学技术对人类社会发展的积极作用，没有看其消极的影响",
+      "D. 看到了创造物质财富的重要意义，而没有看到创造精神财富的积极意义"
+    ],
+    "answer": "AB",
+    "multiAnswers": [
+      "A",
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 77,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "社会存在包括",
+    "options": [
+      "A. 生产关系",
+      "B. 地理环境",
+      "C. 物质生活资料的生产及生产方式",
+      "D. 人口因素"
+    ],
+    "answer": "BCD",
+    "multiAnswers": [
+      "B",
+      "C",
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 78,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "地理环境和人口因素在社会历史发展中的作用",
+    "options": [
+      "A. 都是社会历史发展的决定力量",
+      "B. 都对社会发展起加速或延缓的作用",
+      "C. 都不能脱离社会生产而发生作用",
+      "D. 都不能决定社会的性质和社会形态的更替"
+    ],
+    "answer": "BCD",
+    "multiAnswers": [
+      "B",
+      "C",
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 79,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "社会意识的相对独立性表现为",
+    "options": [
+      "A. 与社会存在发展的不同步性",
+      "B. 对社会存在具有能动的反作用",
+      "C. 社会意识各形式具有历史的继承性",
+      "D. 社会意识各形式之间相互作用和影响"
+    ],
+    "answer": "ABCD",
+    "multiAnswers": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 80,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "18世纪，经济上落后的法国在哲学上和政治思想领域方面取得的成就，超过了当时经济上先进的英国，这表明",
+    "options": [
+      "A. 社会意识的发展不依赖社会经济",
+      "B. 社会存在不决定社会意识",
+      "C. 社会意识具有相对独立性",
+      "D. 社会意识和经济的发展不完全对应"
+    ],
+    "answer": "CD",
+    "multiAnswers": [
+      "C",
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 81,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "马克思说：“无论哪一种社会形态，在它所能容纳的全部生产力发挥出来以前，是决不会灭亡的；而新的更高的生产关系，在它存在的物质条件在旧社会的胞胎里成熟以前，是决不会出现的。”这段话说明",
+    "options": [
+      "A. 生产力的发展是促使社会形态更替的最终原因",
+      "B. 一种新的生产关系的产生需要客观的物质条件的成熟",
+      "C. 无论哪一种社会形态，当它还能够促进生产力发展时，是不会灭亡的",
+      "D. 社会形态总是具体的、历史的"
+    ],
+    "answer": "ABCD",
+    "multiAnswers": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 82,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "在下列社会现象中，属于上层建筑的有",
+    "options": [
+      "A. 生产资料所有制形式",
+      "B. 政治法律制度",
+      "C. 国家政权",
+      "D. 社会意识形态"
+    ],
+    "answer": "BCD",
+    "multiAnswers": [
+      "B",
+      "C",
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 83,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "下列事物或现象中属于意识形态的有",
+    "options": [
+      "A. 费尔巴哈的哲学著作《基督教的本质》",
+      "B. 达尔文的生物进化论",
+      "C. 邓小平法律思想",
+      "D. 达芬奇艺术思想"
+    ],
+    "answer": "ACD",
+    "multiAnswers": [
+      "A",
+      "C",
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 84,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "经济基础与上层建筑的辩证关系主要表现为",
+    "options": [
+      "A. 上层建筑不能先于经济基础而建立",
+      "B. 上层建筑的变化引起经济基础的变化",
+      "C. 经济基础决定上层建筑的产生和发展",
+      "D. 上层建筑反作用于经济基础并为它服务"
+    ],
+    "answer": "CD",
+    "multiAnswers": [
+      "C",
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 85,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "面临环境被污染，使人类越来越重视环境问题，这是因为",
+    "options": [
+      "A. 地理环境是人类物质生活的必要条件",
+      "B. 地理环境是社会发展的直接动力",
+      "C. 地理环境决定社会的性质变化",
+      "D. 地理环境通过物质生产制约社会发展"
+    ],
+    "answer": "AD",
+    "multiAnswers": [
+      "A",
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 86,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "正确解决社会存在和社会意识关系的重大意义在于",
+    "options": [
+      "A. 宣告了历史唯心主义彻底破产",
+      "B. 为实现对社会现象的科学研究提供了理论依据",
+      "C. 为揭示社会发展的客观规律开辟了道路",
+      "D. 为无产阶级的革命实践提供了科学历史观和基本原则"
+    ],
+    "answer": "ABCD",
+    "multiAnswers": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 87,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "文化是社会意识的重要组成部分，文化对社会发展的重要作用主要表现在",
+    "options": [
+      "A. 文化为社会发展提供智力支持",
+      "B. 文化为社会发展提供凝聚力量",
+      "C. 文化为社会发展提供精神动力",
+      "D. 文化为社会发展提供思想保证"
+    ],
+    "answer": "ABCD",
+    "multiAnswers": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 88,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "生产关系一定要适合生产力发展状况的规律是人类社会发展的普遍规律，其原因在于",
+    "options": [
+      "A. 它揭示了人类社会发展的源泉、动力和一般过程",
+      "B. 它规定和制约着人类社会历史中的其他规律",
+      "C. 它决定并制约着参与社会发展过程中自然界发展的客观规律",
+      "D. 它是人类社会在历史发展中始终起作用的规律"
+    ],
+    "answer": "ABD",
+    "multiAnswers": [
+      "A",
+      "B",
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 89,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "物质生产方式对社会发展的决定作用主要表现在",
+    "options": [
+      "A. 它是社会存在和发展的物质基础",
+      "B. 它规定了社会制度的性质",
+      "C. 它是社会制度变革的根本力量",
+      "D. 它决定了社会的基本面貌"
+    ],
+    "answer": "ABCD",
+    "multiAnswers": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 90,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "商品的二因素是",
+    "options": [
+      "A. 使用价值和交换价值",
+      "B. 使用价值和价值",
+      "C. 价值和交换价值",
+      "D. 价值和价格"
+    ],
+    "answer": "B",
+    "multiAnswers": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 91,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "一定社会财富的物质内容由",
+    "options": [
+      "A. 使用价值构成",
+      "B. 交换价值构成",
+      "C. 价值构成",
+      "D. 货币构成"
+    ],
+    "answer": "A",
+    "multiAnswers": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 92,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "不同的商品之所以能按一定的量的比例相交换，其原因在于它们",
+    "options": [
+      "A. 有不同的使用价值",
+      "B. 可以满足人们不同的需要",
+      "C. 都是具体劳动的产物",
+      "D. 都凝结了一般人类劳动"
+    ],
+    "answer": "D",
+    "multiAnswers": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 93,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "商品价值在本质上体现了",
+    "options": [
+      "A. 一般人类劳动",
+      "B. 抽象劳动",
+      "C. 具体劳动",
+      "D. 生产者之间的一定的社会关系"
+    ],
+    "answer": "D",
+    "multiAnswers": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 94,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "形成商品使用价值的是生产商品的",
+    "options": [
+      "A. 劳动",
+      "B. 时间",
+      "C. 具体劳动",
+      "D. 抽象劳动"
+    ],
+    "answer": "C",
+    "multiAnswers": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 95,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "形成商品价值实体的是生产商品的",
+    "options": [
+      "A. 劳动",
+      "B. 时间",
+      "C. 具体劳动",
+      "D. 抽象劳动"
+    ],
+    "answer": "D",
+    "multiAnswers": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 96,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "商品的二因素是由",
+    "options": [
+      "A. 劳动生产率决定的",
+      "B. 劳动时间的二重性决定的",
+      "C. 生产商品的劳动二重性决定的",
+      "D. 劳动的复杂程度决定的"
+    ],
+    "answer": "C",
+    "multiAnswers": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 97,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "生产商品的劳动二重性是",
+    "options": [
+      "A. 简单劳动和复杂劳动",
+      "B. 具体劳动和抽象劳动",
+      "C. 必要劳动和剩余劳动",
+      "D. 私人劳动和社会劳动"
+    ],
+    "answer": "B",
+    "multiAnswers": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 98,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "具体劳动和抽象劳动是",
+    "options": [
+      "A. 两种劳动",
+      "B. 两次劳动",
+      "C. 两个过程的劳动",
+      "D. 同一劳动过程的两个方面"
+    ],
+    "answer": "D",
+    "multiAnswers": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 99,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "商品价值量取决于",
+    "options": [
+      "A. 货币量",
+      "B. 使用价值的量",
+      "C. 商品的有用程度",
+      "D. 生产商品的劳动量"
+    ],
+    "answer": "D",
+    "multiAnswers": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 100,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "衡量商品价值量的劳动时间是",
+    "options": [
+      "A. 必要劳动时间",
+      "B. 剩余劳动时间",
+      "C. 个别劳动时间",
+      "D. 社会必要劳动时间"
+    ],
+    "answer": "D",
+    "multiAnswers": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 101,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "资本主义经济危机的实质是",
+    "options": [
+      "A. 生产相对过剩的危机",
+      "B. 生产不足的危机",
+      "C. 生产绝对过剩的危机",
+      "D. 生产过剩的危机"
+    ],
+    "answer": "A",
+    "multiAnswers": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 102,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "在资本主义发展的初期，资本家提高剥削程度主要依靠",
+    "options": [
+      "A. 绝对剩余价值生产",
+      "B. 相对剩余价值生产",
+      "C. 不变资本生产",
+      "D. 可变资本生产"
+    ],
+    "answer": "A",
+    "multiAnswers": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 103,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "在商品经济中，价值规律的表现形式是",
+    "options": [
+      "A. 市场价格围绕价值上下波动",
+      "B. 价值围绕市场价格上下波动",
+      "C. 价格和价值始终不一致",
+      "D. 价格和价值始终一致"
+    ],
+    "answer": "A",
+    "multiAnswers": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 104,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "剩余价值率反映的是",
+    "options": [
+      "A. 不变资本价值的增殖程度",
+      "B. 资本家的赚钱程度",
+      "C. 固定资本价值的增殖程度",
+      "D. 资本家对工人的剥削程度"
+    ],
+    "answer": "D",
+    "multiAnswers": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 105,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "资本积累的真正来源是",
+    "options": [
+      "A. 劳动生产率的提高",
+      "B. 大资本吞并中小资本的结果",
+      "C. 资本家节俭的结果",
+      "D. 工人创造的剩余价值"
+    ],
+    "answer": "D",
+    "multiAnswers": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 106,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "资本主义生产方式的基本矛盾是",
+    "options": [
+      "A. 私人劳动和社会劳动的矛盾",
+      "B. 生产力和生产关系的矛盾",
+      "C. 生产社会化和生产资料资本主义私有制的矛盾",
+      "D. 生产的高度社会化和产品相对过剩的矛盾"
+    ],
+    "answer": "C",
+    "multiAnswers": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 107,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "货币的本质是",
+    "options": [
+      "A. 商品内在矛盾发展的产物",
+      "B. 价值形式发展的最后阶段",
+      "C. 固定地充当一般等价物的商品",
+      "D. 价值的表现形式"
+    ],
+    "answer": "C",
+    "multiAnswers": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 108,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "抹杀不变资本和可变资本区别的范畴是",
+    "options": [
+      "A. 商品的价值",
+      "B. 生产价格",
+      "C. 工资的形式",
+      "D. 成本价格"
+    ],
+    "answer": "D",
+    "multiAnswers": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 109,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "商品交换中价值与价格的关系表现为",
+    "options": [
+      "A. 价格总是高于价值",
+      "B. 价格总是低于价值",
+      "C. 价格总是等于价值",
+      "D. 价格总是围绕价值上下波动"
+    ],
+    "answer": "D",
+    "multiAnswers": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 110,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "商品所具有的特征是",
+    "options": [
+      "A. 能满足人们某种需要的物品",
+      "B. 人们劳动的产品",
+      "C. 为满足他人或社会需要而生产的产品",
+      "D. 通过有代价的交换方式来满足人们需要的产品"
+    ],
+    "answer": "ABCD",
+    "multiAnswers": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 111,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "商品的二因素是",
+    "options": [
+      "A. 使用价值",
+      "B. 交换价值",
+      "C. 价值",
+      "D. 价格"
+    ],
+    "answer": "AC",
+    "multiAnswers": [
+      "A",
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 112,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "商品的使用价值是",
+    "options": [
+      "A. 能满足人的某种需要的属性",
+      "B. 构成社会财富的物质内容",
+      "C. 交换价值的物质承担者",
+      "D. 价值的表现形式"
+    ],
+    "answer": "ABC",
+    "multiAnswers": [
+      "A",
+      "B",
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 113,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "商品的价值是",
+    "options": [
+      "A. 凝结在商品中的无差别的一般人类劳动",
+      "B. 商品的社会属性，反映商品生产者之间的社会关系",
+      "C. 交换价值的基础",
+      "D. 商品的本质属性"
+    ],
+    "answer": "ABCD",
+    "multiAnswers": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 114,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "商品的价值和使用价值的关系",
+    "options": [
+      "A. 任何商品必须同时具有使用价值和价值两个因素",
+      "B. 要获得商品的价值，就必须放弃商品的使用价值，反之亦然",
+      "C. 两者是对立统一的",
+      "D. 使用价值是价值的物质承担者，价值寓于使用价值之中"
+    ],
+    "answer": "ABCD",
+    "multiAnswers": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 115,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "使用价值、交换价值、价值三者之间的关系是",
+    "options": [
+      "A. 使用价值是交换价值和价值的物质承担者",
+      "B. 交换价值是价值的表现形式",
+      "C. 交换价值和价值寓于使用价值之中",
+      "D. 价值是交换价值的基础和内容"
+    ],
+    "answer": "ABCD",
+    "multiAnswers": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 116,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "反映资本家对工人的剥削程度的公式是",
+    "options": [
+      "A. 剩余劳动时间／必要劳动时间",
+      "B. 剩余价值／可变资本",
+      "C. 年剩余价值量／预付可变资本",
+      "D. 剩余价值／全部预付资本"
+    ],
+    "answer": "AB",
+    "multiAnswers": [
+      "A",
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 117,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "单位商品的价值量和生产这种商品的",
+    "options": [
+      "A. 社会必要劳动时间成反比",
+      "B. 劳动生产率成正比",
+      "C. 社会必要劳动时间成正比",
+      "D. 劳动生产率成反比"
+    ],
+    "answer": "CD",
+    "multiAnswers": [
+      "C",
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 118,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "以下属于不变资本的有",
+    "options": [
+      "A. 厂房",
+      "B. 机器",
+      "C. 原材料",
+      "D. 劳动力"
+    ],
+    "answer": "ABC",
+    "multiAnswers": [
+      "A",
+      "B",
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 119,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "货币的职能有",
+    "options": [
+      "A. 价值尺度",
+      "B. 流通手段",
+      "C. 贮藏手段",
+      "D. 支付手段"
+    ],
+    "answer": "ABCD",
+    "multiAnswers": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 120,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "马克思创立的劳动二重性理论具有重大意义，是因为",
+    "options": [
+      "A. 它是建立科学劳动价值论的坚实基础",
+      "B. 它是剩余价值理论建立的重要基础",
+      "C. 它是划分不变资本和可变资本的根据",
+      "D. 它是理解资本积累、资本再生产等理论的钥匙"
+    ],
+    "answer": "ABD",
+    "multiAnswers": [
+      "A",
+      "B",
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 121,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "商品经济得以产生的历史条件有",
+    "options": [
+      "A. 劳动分工",
+      "B. 社会分工",
+      "C. 交换产生",
+      "D. 生产资料和劳动产品属于不同所有者"
+    ],
+    "answer": "BD",
+    "multiAnswers": [
+      "B",
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 122,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "影响垄断价格的决定性因素是",
+    "options": [
+      "A. 商品价值",
+      "B. 货币价值",
+      "C. 供求关系",
+      "D. 垄断企业的垄断地位"
+    ],
+    "answer": "D",
+    "multiAnswers": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 123,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "垄断资本主义国家实际的控制者是",
+    "options": [
+      "A. 垄断组织",
+      "B. 金融寡头",
+      "C. 官僚集团",
+      "D. 金融资本"
+    ],
+    "answer": "B",
+    "multiAnswers": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 124,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "从世界范围看，资本主义向社会主义过渡将经历一个相当长的历史过程，其原因在于",
+    "options": [
+      "A. 资本主义社会发展比较稳定",
+      "B. 资本主义发展的不平衡性",
+      "C. 社会主义仍然处于初级阶段",
+      "D. 无产阶级力量比较弱小"
+    ],
+    "answer": "B",
+    "multiAnswers": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 125,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "生产和资本集中发展到一定阶段必然",
+    "options": [
+      "A. 加剧矛盾",
+      "B. 形成积累",
+      "C. 导致竞争",
+      "D. 引起垄断"
+    ],
+    "answer": "D",
+    "multiAnswers": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 126,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "金融资本是由",
+    "options": [
+      "A. 工业资本和商业资本融合而形成的一种资本",
+      "B. 工业垄断资本和银行垄断资本融合形成的垄断资本",
+      "C. 工业资本和银行资本融合而形成的一种资本",
+      "D. 银行资本和商业资本融合而形成的一种资本"
+    ],
+    "answer": "B",
+    "multiAnswers": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 127,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "金融寡头控制国家机器的主要途径是",
+    "options": [
+      "A. 参与制",
+      "B. 个人联合",
+      "C. 股份制",
+      "D. 选举制度"
+    ],
+    "answer": "B",
+    "multiAnswers": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 128,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "垄断资本的实质在于获取",
+    "options": [
+      "A. 垄断地位",
+      "B. 独裁身份",
+      "C. 垄断利润",
+      "D. 垄断价格"
+    ],
+    "answer": "C",
+    "multiAnswers": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 129,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "国家垄断资本主义的产生和发展，从根本上说是",
+    "options": [
+      "A. 生产社会化和资本主义私人占有制之间矛盾发展的结果",
+      "B. 国内市场竞争的结果",
+      "C. 垄断统治加强的结果",
+      "D. 国际竞争激烈化的结果"
+    ],
+    "answer": "A",
+    "multiAnswers": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 130,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "帝国主义的实质是",
+    "options": [
+      "A. 瓜分世界",
+      "B. 取得垄断地位",
+      "C. 发动世界大战",
+      "D. 垄断资本凭借垄断地位，获取高额垄断利润"
+    ],
+    "answer": "D",
+    "multiAnswers": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 131,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "列宁称之为“社会主义的最充分的物质准备”、“社会主义的前阶”的是",
+    "options": [
+      "A. 自由竞争资本主义",
+      "B. 私人垄断资本主义",
+      "C. 国家垄断资本主义",
+      "D. 国际垄断资本主义"
+    ],
+    "answer": "C",
+    "multiAnswers": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 132,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "垄断资本主义为向社会主义过渡准备了物质条件，这主要是指",
+    "options": [
+      "A. 产品的商品化",
+      "B. 产品的市场化",
+      "C. 市场的计划化",
+      "D. 生产全面社会化"
+    ],
+    "answer": "D",
+    "multiAnswers": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 133,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "垄断利润归根到底来源于",
+    "options": [
+      "A. 垄断资本家制定的垄断价格",
+      "B. 垄断组织的垄断地位",
+      "C. 垄断企业先进的技术设备",
+      "D. 劳动者创造的剩余价值"
+    ],
+    "answer": "D",
+    "multiAnswers": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 134,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "社会主义代替资本主义是一个",
+    "options": [
+      "A. 长期的历史过程",
+      "B. 复杂的历史过程",
+      "C. 隐蔽的历史过程",
+      "D. 曲折的历史过程"
+    ],
+    "answer": "ABD",
+    "multiAnswers": [
+      "A",
+      "B",
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 135,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "第二次世界大战后，资本主义经济政治都发生了新变化，主要原因有",
+    "options": [
+      "A. 工人阶级争取自身权益的斗争",
+      "B. 改良主义政党对资本主义制度的改革",
+      "C. 社会主义制度的影响",
+      "D. 科技革命和生产力的发展"
+    ],
+    "answer": "ABCD",
+    "multiAnswers": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 136,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "经济全球化对发展中国家有负面影响，表现在",
+    "options": [
+      "A. 削弱了发展中国家文化特色",
+      "B. 一定程度上增加了经济风险",
+      "C. 加剧了发展中国家环境污染恶化",
+      "D. 影响社会稳定"
+    ],
+    "answer": "BC",
+    "multiAnswers": [
+      "B",
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 137,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "垄断资本向世界范围扩展的基本形式有",
+    "options": [
+      "A. 借贷资本输出",
+      "B. 生产资本输出",
+      "C. 商品资本输出",
+      "D. 私人资本输出"
+    ],
+    "answer": "ABC",
+    "multiAnswers": [
+      "A",
+      "B",
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 138,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "垄断并没有消除竞争，其竞争主要表现在",
+    "options": [
+      "A. 垄断组织之间的竞争",
+      "B. 垄断组织与非垄断企业之间的竞争",
+      "C. 非垄断企业之间的竞争",
+      "D. 垄断组织内部的竞争"
+    ],
+    "answer": "ABCD",
+    "multiAnswers": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 139,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "垄断不能消除竞争，是因为",
+    "options": [
+      "A. 垄断的本质就是竞争",
+      "B. 垄断必须通过竞争来维持",
+      "C. 垄断没有消除产生竞争的经济条件",
+      "D. 任何垄断组织不可能囊括一切社会生产"
+    ],
+    "answer": "BCD",
+    "multiAnswers": [
+      "B",
+      "C",
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 140,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "资本主义社会发展经历的历史阶段有",
+    "options": [
+      "A. 自由竞争资本主义",
+      "B. 垄断资本主义",
+      "C. 私人垄断资本主义",
+      "D. 国家垄断资本主义"
+    ],
+    "answer": "AB",
+    "multiAnswers": [
+      "A",
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 141,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "垄断资本向世界范围扩展的主要经济动因是",
+    "options": [
+      "A. 将国内过剩的资本输出以便在国外谋求高额利润",
+      "B. 将部分非要害的技术转移到国外以取得在别国的垄断利润",
+      "C. 争夺商品销售市场",
+      "D. 确保原材料和能源的可靠来源"
+    ],
+    "answer": "ABCD",
+    "multiAnswers": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 142,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "经济全球化的表现有",
+    "options": [
+      "A. 生产的全球化",
+      "B. 贸易的全球化",
+      "C. 金融的全球化",
+      "D. 企业经营的全球化"
+    ],
+    "answer": "ABCD",
+    "multiAnswers": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 143,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "私人垄断资本主义向国家垄断资本主义过渡",
+    "options": [
+      "A. 在一定程度上促进了资本主义生产的发展",
+      "B. 是资本主义基本矛盾发展的必然结果",
+      "C. 是资本主义生产社会化的客观要求",
+      "D. 能够从根本上解决资本主义的基本矛盾"
+    ],
+    "answer": "ABC",
+    "multiAnswers": [
+      "A",
+      "B",
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 144,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "社会主义的根本任务是",
+    "options": [
+      "A. 进行阶级斗争",
+      "B. 改革生产资料所有制",
+      "C. 进行政治体制改革、经济体制改革",
+      "D. 解放生产力、发展生产力"
+    ],
+    "answer": "D",
+    "multiAnswers": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 145,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "社会主义的根本目的在于",
+    "options": [
+      "A. 最终达到共同富裕",
+      "B. 建立无产阶级专政",
+      "C. 巩固共产党的领导",
+      "D. 镇压资产阶级的反抗"
+    ],
+    "answer": "A",
+    "multiAnswers": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 146,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "科学社会主义的直接理论来源是",
+    "options": [
+      "A. A. 16-17世纪早期空想社会主义",
+      "B. B. 18世纪空想平均共产主义",
+      "C. C. 19世纪初的批判空想社会主义",
+      "D. 唯物主义和辩证法"
+    ],
+    "answer": "C",
+    "multiAnswers": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 147,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "社会主义从理论到实践的飞跃，具体途径是",
+    "options": [
+      "A. 通过改革和革命实现的",
+      "B. 通过对人民群众的教育实现的",
+      "C. 通过实践活动实现的",
+      "D. 通过无产阶级革命实现的"
+    ],
+    "answer": "D",
+    "multiAnswers": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 148,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "社会主义的发展道路必然呈现多样性的特点，造成社会主义发展道路多样性的现实原因是",
+    "options": [
+      "A. 无产阶级政党自身成熟程度的不同.",
+      "B. 历史文化传统的差异性",
+      "C. 时代和实践的不断发展",
+      "D. 革命传统不同"
+    ],
+    "answer": "C",
+    "multiAnswers": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 149,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "“两个必然”的根本依据是",
+    "options": [
+      "A. 人类社会发展规律",
+      "B. 辩证统一规律",
+      "C. 否定之否定规律",
+      "D. 自然发展规律"
+    ],
+    "answer": "A",
+    "multiAnswers": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 150,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "“资本主义必然灭亡，社会主义必然胜利”是科学社会主义的",
+    "options": [
+      "A. 主要内容",
+      "B. 核心命题",
+      "C. 主流思想",
+      "D. 理想表述"
+    ],
+    "answer": "B",
+    "multiAnswers": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 151,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "社会主义政治制度的基本特征是",
+    "options": [
+      "A. 坚持社会主义方向",
+      "B. 无产阶级政党领导",
+      "C. 无产阶级专政的政权",
+      "D. 马克思主义的指导"
+    ],
+    "answer": "C",
+    "multiAnswers": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 152,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "经济文化相对落后的国家可以先于资本主义国家进入社会主义，其根本原因是由于",
+    "options": [
+      "A. 经济文化相对落后的国家具有较高的精神文明",
+      "B. 革命的客观形势和条件所决定的",
+      "C. 它是以高度社会化的资本主义大生产作为社会主义革命物质前提",
+      "D. 社会主义生产关系可以在旧社会的内部孕育生长起来"
+    ],
+    "answer": "B",
+    "multiAnswers": [
+      "B"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 153,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "“解放生产力，发展生产力，消灭剥削，消除两极分化，最终达到共同富裕。”这句话揭示的是",
+    "options": [
+      "A. 社会主义的本质",
+      "B. 目前我国社会的性质",
+      "C. 我国的基本经济制度",
+      "D. 社会主义的根本任务"
+    ],
+    "answer": "A",
+    "multiAnswers": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 154,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "经济文化相对落后国家建设社会主义具有长期性，是因为",
+    "options": [
+      "A. 生产力发展状况的制约",
+      "B. 经济基础和上层建筑发展状况的制约",
+      "C. 国际环境的严峻挑战",
+      "D. 对社会主义建设规律的认识，需要长期过程"
+    ],
+    "answer": "ABCD",
+    "multiAnswers": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 155,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "社会主义发展道路具有多样性，无产阶级执政党必须领导本国人民，努力探索适合自己国情的社会主义发展道路。探索社会主义发展道路，必须",
+    "options": [
+      "A. 坚持对待马克思主义的科学态度",
+      "B. 从当时当地的历史条件出发，坚持“走自己的路”",
+      "C. 充分吸收人类一切文明成果",
+      "D. 从个别归纳出一条适合社会主义国家的道路和模式"
+    ],
+    "answer": "ABC",
+    "multiAnswers": [
+      "A",
+      "B",
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 156,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "空想社会主义与科学社会主义的根本区别在于",
+    "options": [
+      "A. 历史观不同",
+      "B. 对资本主义制度的态度不同",
+      "C. 依靠的社会力量不同",
+      "D. 实现理想的途径不同"
+    ],
+    "answer": "ACD",
+    "multiAnswers": [
+      "A",
+      "C",
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 157,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "无产阶级反抗资产阶级斗争的主要形式",
+    "options": [
+      "A. 经济斗争",
+      "B. 政治斗争",
+      "C. 思想斗争",
+      "D. 文化斗争"
+    ],
+    "answer": "ABC",
+    "multiAnswers": [
+      "A",
+      "B",
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 158,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "社会主义发展道路多样性的原因在于",
+    "options": [
+      "A. 生产力发展状况不同",
+      "B. 历史文化传统不同",
+      "C. 指导思想不同",
+      "D. 社会发展阶段不同"
+    ],
+    "answer": "ABD",
+    "multiAnswers": [
+      "A",
+      "B",
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 159,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "19世纪欧洲三大空想社会主义者是",
+    "options": [
+      "A. 欧文",
+      "B. 亚当·斯密",
+      "C. 傅立叶",
+      "D. 圣西门"
+    ],
+    "answer": "ACD",
+    "multiAnswers": [
+      "A",
+      "C",
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 160,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "无产阶级革命是迄今人类历史上最广泛、最彻底、最深刻的革命，是不同于以往一切革命的最新类型的革命，这是因为它",
+    "options": [
+      "A. 是彻底消灭私有制、代之以生产资料公有制的革命",
+      "B. 是彻底消灭一切阶级和阶级统治的革命",
+      "C. 是为绝大多数人谋利益的运动",
+      "D. 是不断前进的历史过程"
+    ],
+    "answer": "ABCD",
+    "multiAnswers": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 161,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "马克思主义关于无产阶级革命形式的基本观点",
+    "options": [
+      "A. 暴力革命是无产阶级革命的唯一形式",
+      "B. 无产阶级革命有暴力与和平两种形式",
+      "C. 暴力革命是主要的基本形式",
+      "D. 在任何情况下都可以采取和平形式"
+    ],
+    "answer": "BC",
+    "multiAnswers": [
+      "B",
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 162,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "列宁对社会主义特征的认识主要有",
+    "options": [
+      "A. 实行全民所有制经济和集体所有制合作经济",
+      "B. 存在商品生产和商品交换",
+      "C. 具有高度发达的生产力和比资本主义更高的劳动生产率",
+      "D. 建立工人阶级和劳动人民的政权及其民主制度"
+    ],
+    "answer": "ABCD",
+    "multiAnswers": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 163,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "自第一个社会主义国家建立以来，社会主义事业的发展并不是一帆风顺的，社会主义发展道路的多样性以及发展过程中的前进性和曲折性的实践告诉我们",
+    "options": [
+      "A. 坚持社会主义，不等于要坚持某种单一的社会主义模式",
+      "B. 发展社会主义，不等于不认可西方资本主义的文明成果",
+      "C. 改革有抛弃某种社会主义模式，不等于改掉或抛弃社会主义",
+      "D. 某种社会主义模式的失败，不等于整个社会主义事业的成败"
+    ],
+    "answer": "ABCD",
+    "multiAnswers": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 164,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "自由王国是指人们",
+    "options": [
+      "A. 处于绝对自由的原始社会状态",
+      "B. 允许自由竞争的资本主义状态",
+      "C. 不再受自然规律和社会规律支配的状态",
+      "D. 摆脱了自然和社会关系的奴役"
+    ],
+    "answer": "D",
+    "multiAnswers": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 165,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "共产主义社会的必经阶段和必由之路是",
+    "options": [
+      "A. 社会主义革命和无产阶级专政",
+      "B. 向社会主义过渡时期",
+      "C. 社会主义初级阶段",
+      "D. 社会主义社会"
+    ],
+    "answer": "D",
+    "multiAnswers": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 166,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "“两个必然”和“两个绝不会”是",
+    "options": [
+      "A. 矛盾的",
+      "B. 两回事",
+      "C. 有内在联系",
+      "D. 是内容与形式的统一"
+    ],
+    "answer": "C",
+    "multiAnswers": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 167,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "在展望未来社会的问题上，马克思主义与空想社会主义的根本区别在于",
+    "options": [
+      "A. 是否深刻地批判资本主义社会",
+      "B. 是否详尽地描述未来理想社会",
+      "C. 是否坚持科学的立场、观点和方法",
+      "D. 是否提出具体的变革措施"
+    ],
+    "answer": "C",
+    "multiAnswers": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 168,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "在共产主义社会，个人消费品的分配方式是",
+    "options": [
+      "A. 按劳分配",
+      "B. 按生产要素分配",
+      "C. 按需分配",
+      "D. 按资分配"
+    ],
+    "answer": "C",
+    "multiAnswers": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 169,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "“必然王国”和“自由王国”是历史性概念，它是指社会发展的",
+    "options": [
+      "A. 两种不同的状态",
+      "B. 两种不同的模式",
+      "C. 两种不同的选择",
+      "D. 两种不同的道路"
+    ],
+    "answer": "A",
+    "multiAnswers": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 170,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "我们说共产主义理想能够实现，因为这是",
+    "options": [
+      "A. 人类社会的发展规律所决定的",
+      "B. 由社会主义建设所决定的",
+      "C. 由阶级矛盾所决定的",
+      "D. 人类最伟大的事业所决定的"
+    ],
+    "answer": "A",
+    "multiAnswers": [
+      "A"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 171,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "阶级社会不平等的重要表现和社会不和谐的重要根源是",
+    "options": [
+      "A. 阶级斗争",
+      "B. 国家的存在",
+      "C. 三大差别引起的三种对立",
+      "D. 私有制的存在"
+    ],
+    "answer": "C",
+    "multiAnswers": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 172,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "马克思主义认为自由是人类",
+    "options": [
+      "A. 选择的随意性",
+      "B. 活动的主动性",
+      "C. 对必然的认识和对世界的改造",
+      "D. 摆脱必然性"
+    ],
+    "answer": "C",
+    "multiAnswers": [
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 173,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "在共产主义社会，国家消亡，具体说来消亡的是",
+    "options": [
+      "A. 国家的全部职能",
+      "B. 国家的全部机构",
+      "C. 国家的社会管理职能",
+      "D. 政治国家即作为阶级压迫的国家机器"
+    ],
+    "answer": "D",
+    "multiAnswers": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 174,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "马克思主义认为，消灭“三大差别”的关键在于",
+    "options": [
+      "A. 消灭工业与农业的差别",
+      "B. 消灭城市和乡村的差别",
+      "C. 消灭脑力劳动和体力劳动的差别",
+      "D. 消灭利益差别"
+    ],
+    "answer": "D",
+    "multiAnswers": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 175,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "single",
+    "question": "在人的发展和社会发展关系问题上，马克思主义认为",
+    "options": [
+      "A. 前者是个人的理想，后者是社会的目标",
+      "B. 前者体现了个人价值，后者体现了社会价值",
+      "C. 前者和后者是彼此独立的历史发展进程",
+      "D. 前者和后者互为前提和基础"
+    ],
+    "answer": "D",
+    "multiAnswers": [
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 176,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "共产主义社会的基本特征有",
+    "options": [
+      "A. 社会财富极大丰富，消费品按需分配",
+      "B. 社会财富极大丰富，消费品按劳分配",
+      "C. 社会关系高度和谐，人们的精神境界极大提高",
+      "D. 每个人自由而全面的发展，人类从必然王国进入自由王国"
+    ],
+    "answer": "ACD",
+    "multiAnswers": [
+      "A",
+      "C",
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 177,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "下列选项属于人类解放含义的有",
+    "options": [
+      "A. 完全摆脱自然力和社会关系",
+      "B. 获得绝对自由",
+      "C. 从自然必然性奴役下解放出来",
+      "D. 从社会必然性奴役下解放出来"
+    ],
+    "answer": "CD",
+    "multiAnswers": [
+      "C",
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 178,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "实现共产主义是一个长期的实践过程，是因为",
+    "options": [
+      "A. 社会主义社会的充分发展和向共产主义社会过渡需要很长的历史时期",
+      "B. 当代资本主义的灭亡和向社会主义.共产主义的转变也是一个长期的过程",
+      "C. 资本主义必然灭亡和社会主义必然胜利的实现需要相应的客观条件",
+      "D. 无论哪种社会形态，在它所能容纳的全部生产力发挥出来前，是决不会灭亡的"
+    ],
+    "answer": "ABCD",
+    "multiAnswers": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 179,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "共产主义社会是人的自由而全面发展的社会，这里的“自由而全面的发展”指的是",
+    "options": [
+      "A. 全体社会成员的发展或每一个人的发展",
+      "B. 社会和谐，人与人之间形成事实上的平等",
+      "C. 社会发展与个人发展实现了真正的统一",
+      "D. 社会发展不再以牺牲某些个人的发展为代价"
+    ],
+    "answer": "ABCD",
+    "multiAnswers": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 180,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "列宁指出：“马克思丝毫不想制造乌托邦，不想凭空猜测无法知道的事情。马克思提出共产主义的问题，正像一个自然科学家已经知道某一新的生物变种是怎样产生以及朝哪个方向演变才提出该生物变种的发展问题一样。”也就是说，马克思预见未来与空想社会主义不同，马克思",
+    "options": [
+      "A. 在揭示人类社会发展一般规律基础上对共产主义社会作出科学展望",
+      "B. 在剖析资本主义社会旧世界中阐发未来新世界的特点",
+      "C. 立足于揭示未来社会的一般特征而不作详尽的细节描绘",
+      "D. 把坚持科学的立场、观点和方法作为预见未来的基本前提"
+    ],
+    "answer": "ABCD",
+    "multiAnswers": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 181,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "实现共产主义是一个",
+    "options": [
+      "A. 合规律的过程",
+      "B. 合目的的过程",
+      "C. 合乎人的自由的过程",
+      "D. 合规律性和合目的性的统一"
+    ],
+    "answer": "ABD",
+    "multiAnswers": [
+      "A",
+      "B",
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 182,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "共产主义是能够实现的社会理想的根据是",
+    "options": [
+      "A. 以人类社会发展规律为依据",
+      "B. 以资本主义社会基本矛盾的发展为依据",
+      "C. 可以用社会主义运动的实践来证明",
+      "D. 要靠社会主义的不断完善和发展来实现"
+    ],
+    "answer": "ABCD",
+    "multiAnswers": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 183,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "人的全面发展是指",
+    "options": [
+      "A. 德、智、体、美各方面都得到发展",
+      "B. 人的社会联系和社会交往得到发展",
+      "C. 各方面才能和工作能力得到发展",
+      "D. 人的各种要求都能得到满足"
+    ],
+    "answer": "ABC",
+    "multiAnswers": [
+      "A",
+      "B",
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 184,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "共产主义理想是",
+    "options": [
+      "A. 具有客观必然性，经过努力可以实现的理想",
+      "B. 具有客观必然性，无需经过努力亦可实现的社会理想",
+      "C. 以人类社会发展规律以及资本主义社会的基本矛盾发展为依据的",
+      "D. 奴隶阶级的社会理想"
+    ],
+    "answer": "AC",
+    "multiAnswers": [
+      "A",
+      "C"
+    ],
+    "explanation": ""
+  },
+  {
+    "id": 185,
+    "subject": "marxism",
+    "chapter": 0,
+    "chapterName": "马克思主义原理",
+    "type": "multi",
+    "question": "马克思主义经典作家预见未来社会的方法是",
+    "options": [
+      "A. 在揭示人类社会发展一般规律的基础上指明社会发展的方向",
+      "B. 在剖析资本主义社会旧世界中阐发未来新世界的特点",
+      "C. 立足于揭示未来社会的一般特征而不作详尽的细节描绘",
+      "D. 吸取了前人优秀的思想成果"
+    ],
+    "answer": "ABC",
+    "multiAnswers": [
+      "A",
+      "B",
+      "C"
+    ],
+    "explanation": ""
+  }
+]
